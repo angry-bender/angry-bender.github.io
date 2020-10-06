@@ -1,0 +1,11 @@
+main:
+  - title: "Linux Cheatsheet"
+    url: "/blog/basic_linux_resources/"
+  - title: "Posts"
+    url: /posts/
+  - title: "Topics"
+    url: /tags/
+  - title: "About"
+    url: /about/
+  - title: "Released Projects"
+    url: /projects/
