@@ -10,7 +10,7 @@ header:
 ---
 
 # Introduction
-I've had a few collegues ask me how I have a full featured Bash IDE for courses I have developed; So I thought i'd make a post to show people how to do it.
+I've had a few colleagues ask me how I have a full featured Bash IDE for courses I have developed; So I thought i'd make a post to show people how to do it.
 
 ## Features
 * Full Bash Debugging (Built into the IDE)
@@ -62,7 +62,7 @@ I've had a few collegues ask me how I have a full featured Bash IDE for courses 
 
 * Search for Shellcheck, select it, then select install
 
-  * Once shell check is installed click on the settings cog, and select extention settings
+  * Once shell check is installed click on the settings cog, and select extension settings
   
     ![extentionsettings.png](/img/bide/extentionsettings.png)
   

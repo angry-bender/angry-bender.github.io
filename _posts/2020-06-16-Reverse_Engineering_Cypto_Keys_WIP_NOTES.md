@@ -11,29 +11,29 @@ comments: false
 I am by no means a programming, or RE expert. But I'm going to have a go at explaining the issue of finding the needle in a haystack of an XOR key used to obfuscate files in a sample.
 
 # Introduction
-Find that needle in the haystack... I had a collegue ask for some help finding a crypto key for a challenge they were doing, I had no idea i'd be rehashing some of the basics of CompSCI and C Programming. 
+Find that needle in the haystack... I had a colleague ask for some help finding a crypto key for a challenge they were doing, I had no idea i'd be rehashing some of the basics of CompSCI and C Programming. 
 
 ## Background
-According to DI Management, in cryptography programming, binary data is usually inputed to, or outputed from, as a bit string.
+According to DI Management, in cryptography programming, binary data is usually inputted to, or outputted from, as a bit string.
 
-A bit string, might help you find the key. In this instance, we were given a hint about the function. Normally, it needs to be found as a needle in a haystack. Not fun... For finding it purely, I dont have a methodoly just yet, but, if you can find the reference to the key hopefully this provides and explination.
+A bit string, might help you find the key. In this instance, we were given a hint about the function. Normally, it needs to be found as a needle in a haystack. Not fun... For finding it purely, I don't have a methodology just yet, but, if you can find the reference to the key hopefully this provides and explanation.
 
-The second peice of background you might need, is to figure out how a "bit string" might be stored. For all intensive purposes a bit string in this case appears to be an array of hexidecimal characters that could be stored in one of two ways
+The second piece of background you might need, is to figure out how a "bit string" might be stored. For all intensive purposes a bit string in this case appears to be an array of hexadecimal characters that could be stored in one of two ways
 
 ### Local Variables
-Local varibles, are those that exist only inside a function within C. In assembly this means the array is stored in the stack and appears to be stored as a dword. 
+Local variables, are those that exist only inside a function within C. In assembly this means the array is stored in the stack and appears to be stored as a dword. 
 
-This means that your varible likely only exists inside that function, and therefore, any processing is likely to not show the exact reference to the data.
+This means that your variable likely only exists inside that function, and therefore, any processing is likely to not show the exact reference to the data.
 
 ### Global Variables
 Global variables are those that are available to any function within C. In assembly, this appears to mean they are pushed as a byte_reference on the stack.
 
-This means, a key is likely poped back off the stack, so you can refer to it as 0xFFFFFFFF (with F being the reference to the original byte_reference) when decompiling. This means when an indivual function wants to process this data, it is likely to leave a reference to the location in the stack or the (.data) part of the object.
+This means, a key is likely popped back off the stack, so you can refer to it as 0xFFFFFFFF (with F being the reference to the original byte_reference) when decompiling. This means when an individual function wants to process this data, it is likely to leave a reference to the location in the stack or the (.data) part of the object.
 
 ## Software Used
 IDA - To follow through the code
 
-Snowman - To look at the code rudimentally
+Snowman - To look at the code rudimentary
 
 Borland C++ 5.5.1 - To Compile
 
@@ -45,7 +45,7 @@ To find these results, I used the following code (The comments, refer to what I 
 /*
 Author: Samuel Freeman
 Date: 16/06/20
-Purpose: To decompile and show a simple prog
+Purpose: To recompile and show a simple prog
 */
 
 #include <stdio.h>
