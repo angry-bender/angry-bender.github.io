@@ -15,10 +15,10 @@ Welcome to my blog on various topics. I aim to do a few write-ups here based on 
 
 ### Contact
 
-[reddit](https://www.reddit.com/user/angrybender) u/angrybender
+[reddit](https://www.reddit.com/user/angrybender) u/angrybender [DM](https://www.reddit.com/message/compose/)
 
 [hack the box](https://www.hackthebox.eu/home/users/profile/84498) angrybender
 
 ![HTB](https://www.hackthebox.eu/badge/image/84498)
 
-^Got close to hacker, its been a while :-pp
+^Got close to hacker, its been a while :-p
