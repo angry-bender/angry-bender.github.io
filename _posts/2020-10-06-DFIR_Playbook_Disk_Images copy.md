@@ -25,7 +25,7 @@ Broadly, the following overview, will show the basic fls / mmls commands. For ea
 
 Command | Description | Comments | Use
 -------|--------|-------|--------
-`mmls <filename>`| Show's partitions and disk offsets | Usually the largest partition that starts at approximately 63 for BIOS versions of windows, and the second partition after 2048 for EFI versions of windows | [![mmls](/img/dsk/mmls.png)](/img/dsk/mmls.png))
+`mmls <filename>`| Show's partitions and disk offsets | Usually the largest partition that starts at approximately 63 for BIOS versions of windows, and the second partition after 2048 for EFI versions of windows | [![mmls](/img/dsk/mmls.png)](/img/dsk/mmls.png)
 `fls -o <offset> <filename>`| Using the offsets identified on mmls will show the contents off the root directory (ls -lah equivalent)| - | [![flso](/img/dsk/flso.png)](/img/dsk/flso.png)
 `fls -o <Offset> <filename> -D`| shows only directories the directories avialable. | - | [![flsd](/img/dsk/flsd.png)](/img/dsk/flsd.png)
 `fls -o <offset> <filename> <inode>`| lists the contents of a given directory. | - | - [![flsi](/img/dsk/flsi.png)](/img/dsk/flsi.png)
