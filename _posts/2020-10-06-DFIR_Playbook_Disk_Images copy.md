@@ -61,8 +61,8 @@ Command | Description
 `ACPI`\
 `MSIE\ Cache\ File`\
 `\(\$FILE\_NAME\)`\
-`THREAD`\  
-`DLL\ LOADTIME`\
+`THREAD`
+`DLL\ LOADTIME`
 
 [*Back to table of contents*](#)
 
