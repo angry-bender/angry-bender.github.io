@@ -30,6 +30,7 @@ Command | Description | Comments | Use
 `fls -o <Offset> <filename> -D`| shows only directories the directories avialable. | - | [![flsd](/img/dsk/flsd.png)](/img/dsk/flsd.png)
 `fls -o <offset> <filename> <inode>`| lists the contents of a given directory. | - | - [![flsi](/img/dsk/flsi.png)](/img/dsk/flsi.png)
 `fls -o <offset> <filename> <inode> -r` | lists the contents of a given directory and all its sub directories | - | [![flsr](/img/dsk/flsr.png)](/img/dsk/flsr.png)
+`fls -o <offset> <filename> <inode> -l` | lists the times on files | - | -
 `icat -o <offset> <filename> <inode>` | cat's out the file to STDOUT, can be redirected to make a copy of the file by adding `> file.txt`. | - | [![icat](/img/dsk/icat.png)](/img/dsk/icat.png)
 `tsk_recover -o <offset> <filename> -e -d <Directory inode>` | Extracts an entire directories files, including those that are unallocated, useful for deleted files | - | [![tsk](/img/dsk/tsk.png)](/img/dsk/tsk.png)
 
@@ -45,8 +46,8 @@ You can tsk for more than just extracting files. Its one of the best, and most l
 
 Command | Description
 -------|--------
-`fls -o <offset> <filename> -r -p -m <PartitionLetter>:/ > <outputfile>`| Generates a tsk triage timeline bodyfile
-`mactime -b <filename? -b <bodyfile> -d -y -z <Timezone> <StartTime> <EndTime> > <outputfile>.csv`| Creates a csv timeline from the body file. Tzformat = `Australia/Sydney` TimeFormat = `2000-04-20T00:00:00` NOTE: `-z` with `<timezone>` `<StartTime>` or `<EndTime>` are optional
+`fls -o <offset> <filename> -r -p -m <PartitionLetter>:/ > <outputfile>`| Generates a tsk triage timeline bodyfile note, you can use `/` for a linux partition instead of `<PartitionLetter>:/`
+`mactime -b <bodyfile> -d -y -z <Timezone> <StartTime> <EndTime> > <outputfile>.csv`| Creates a csv timeline from the body file. Tzformat = `Australia/Sydney` TimeFormat = `2000-04-20T00:00:00` NOTE: `-z` with `<timezone>` `<StartTime>` or `<EndTime>` are optional
 `grep -v -i -f timeline_noise.txt <outputfile>.csv > <outfile-final>.csv` | Reduces timeline noise
 
 [*Back to table of contents*](#)
