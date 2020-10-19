@@ -46,7 +46,8 @@ You can tsk for more than just extracting files. Its one of the best, and most l
 
 Command | Description
 -------|--------
-`fls -o <offset> <filename> -r -p -m <PartitionLetter>:/ > <outputfile>`| Generates a tsk triage timeline bodyfile note, you can use `/` for a linux partition instead of `<PartitionLetter>:/`
+`fls -o <offset> <filename> -r -p -m <PartitionLetter>:/ > <outputfile>`| Generates a tsk triage timeline bodyfile from **offset**. Note, you can use `/` for a linux partition instead of `<PartitionLetter>:/`
+`fls -r -p -m <PartitionLetter>:/ -d /dev/<sdx> > <outputfile>`| Generates a tsk triage timeline bodyfile note from a **diskmount**, you can use `/` for a linux partition instead of `<PartitionLetter>:/`
 `mactime -b <bodyfile> -d -y -z <Timezone> <StartTime> <EndTime> > <outputfile>.csv`| Creates a csv timeline from the body file. Tzformat = `Australia/Sydney` TimeFormat = `2000-04-20T00:00:00` NOTE: `-z` with `<timezone>` `<StartTime>` or `<EndTime>` are optional **note** if you are unsure of the timezones **OR** times dont convert correctly , you can list them with `mactime -z list` if you get an error that states time module not loaded, you will need to install `sudo apt-get install libdatetime-perl`
 `grep -v -i -f timeline_noise.txt <outputfile>.csv > <outfile-final>.csv` | Reduces timeline noise
 
