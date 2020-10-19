@@ -23,14 +23,14 @@ Credits for this discovery go to dave... you know who you are ;-)
 
 
 # Instructions
-1.  It appears that the hex value of `ffff ffff ffff ffff`will show under xxd if a vmdk is compressed, but file, shows know difference
+-  It appears that the hex value of `ffff ffff ffff ffff`will show under xxd if a vmdk is compressed, but file, shows know difference
 abender@sift:~$ xxd sample.vmdk | head -n 4
 
 ```bash
 ... # output suppressed ...
 00000030: 0000 0000 0000 0000 ffff ffff ffff ffff
 ```
-2.  So if the `ffff ffff ffff ffff`is present, you can convert it with virtualbox (you will need to install it first)
+- So if the `ffff ffff ffff ffff`is present, you can convert it with virtualbox (you will need to install it first)
    
 ```bash
 abender@sift:~$ vboxmanage clonehd --format vmdk sample.vmdk sample-flat.vmdk
@@ -38,7 +38,7 @@ abender@sift:~$ vboxmanage clonehd --format vmdk sample.vmdk sample-flat.vmdk
 Clone medium created in format 'vmdk'. UUID 12844321-9000-4a2c-0701ff223241
 abender@sift:~$ 
 ```
-3.  Now try mmls again
+-  Now try mmls again
    
 ```bash
 abender@sift:~$ mmls sample.vmdk
@@ -54,4 +54,4 @@ Units are in 512-byte sectors
 02:  00:00   0068388705   0078156224   0009767520   Linux (0x83)
 03:  ---------   0078156225   0078165359   0000009135   Unallocated
 ```
-4.  If this doesnt work, you can also try `qemu-img` to convert to raw
+-  If this doesnt work, you can also try `qemu-img` to convert to raw
