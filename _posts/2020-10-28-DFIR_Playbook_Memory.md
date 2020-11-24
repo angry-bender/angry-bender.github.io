@@ -105,7 +105,7 @@ Option|Description
 `file-scan` | shows files opened in memory
 `dumpregistry -D <outputdirectory>` | dumps the windows registry from memory
 
-1. If all else fails, you can also use `strings -el <filename>` accross the image to find a given string with `grep` etc
+2. If all else fails, you can also use `strings -el <filename>` accross the image to find a given string with `grep` etc
 
 [*Back to table of contents*](#contents)
 
