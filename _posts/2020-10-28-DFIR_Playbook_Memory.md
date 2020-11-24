@@ -132,7 +132,7 @@ Option|Description
 `SSDT` | identifies hooking kernel modules outside of the norm
 `psxview` | Review hidden process
 `modscan` | Loaded drivers and kernel modules
-`apihooks -p <pid>` Can show api hooks used by espionage malware or rootkits see [Rootkit-Investigation-Procedures](https://www.sans.org/score/checklists/rootkits-investigation-procedures)
+`apihooks -p <pid>` | Can show api hooks used by espionage malware or rootkits see [Rootkit-Investigation-Procedures](https://www.sans.org/score/checklists/rootkits-investigation-procedures)
 
 [*Back to table of contents*](#contents)
 
