@@ -124,6 +124,7 @@ Option|Description
 1. All the commands below use `volatility -f <imagename> --profile <profile>` as a prefix, the table below, describes each option used for command line
 
 Option|Description
+-----|-----
 `malfind --dumpdir=<outputdir>` | common yara rule to dump malware with common IOC's
 `ldrmodules -p<pid>` | detect unlinked dll's and non-memory mapped files
 `hollowfind` | detect evidence of known memory hollowing techniques
