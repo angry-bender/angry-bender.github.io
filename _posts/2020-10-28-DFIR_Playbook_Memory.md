@@ -22,7 +22,7 @@ This post aims to replicate my physical playbook on Memory Analysis and includes
 - [Analysis Tasks](#analysis-tasks)
   - [Determine profile](#determine-profile)
   - [Quick IOC Wins (Get the files, dump the files, scan the files)](#quick-ioc-wins-get-the-files-dump-the-files-scan-the-files)
-  - [Analyse processess](#analyse-processess)
+  - [Analyse processes](#analyse-processes)
   - [Analyse System](#analyse-system)
   - [Analyse Network](#analyse-network)
   - [Code Injection](#code-injection)
@@ -35,10 +35,10 @@ This post aims to replicate my physical playbook on Memory Analysis and includes
   - [Basic Linux volatility commands](#basic-linux-volatility-commands)
 
 # Windows Overlay Updates
-1.  By default, the packaged version of volaility does not come with the latest volatility profiles, to fix this conduct the following steps;
+1.  By default, the packaged version of volatility does not come with the latest volatility profiles, to fix this conduct the following steps;
 - `git clone https://github.com/volatilityfoundation/volatility.git` for the latest version to your home directory
 - `cd ~/volatility/volatility/plugins/overlays/windows`
-- use the following command to copy the profiles accross `sudo cp -r * /usr/local/lib/python2.7/dist-packages/volatility/plugins/overlays/windows`
+- use the following command to copy the profiles across `sudo cp -r * /usr/local/lib/python2.7/dist-packages/volatility/plugins/overlays/windows`
 - confirm you have the latest profiles with `vol.py --info | grep -i win10`
 - - You should at least have the `Win10x64_18362        - A Profile for Windows 10 x64 (10.0.18362.0 / 2019-04-23)` profile
 
@@ -65,32 +65,32 @@ Order|Command|Description
 Order|Command|Description
 -|-----|-----
 1 | `vol.py -f <imagename> --profile <profile> procdump --dump-dir=<DUMPFILEDIR>` | Dumps the running processes
-2 | `vol.py -f <imagename> --profile <profile> dlldump --dump-dir=<DUMPFILEDIR>` | Dumps called DLL's from processess
-3 | `vol.py -f <imagename> --profile <profile> moddump --dump-dir=<DUMPFILEDIR>` | Dumps drivers called from processess
+2 | `vol.py -f <imagename> --profile <profile> dlldump --dump-dir=<DUMPFILEDIR>` | Dumps called DLL's from processes
+3 | `vol.py -f <imagename> --profile <profile> moddump --dump-dir=<DUMPFILEDIR>` | Dumps drivers called from processes
 
 4. Once this has been done, you can use either sophos for linux (seems to work the best) or clamav, ensuring you have updated your patterns with the most recent update `clamscan -r --bell -i <DUMPFILEDIR>`
 
 [*Back to table of contents*](#contents)
 
-## Analyse processess
+## Analyse processes
 1. All the commands below use `volatility -f <imagename> --profile <profile>` as a prefix, the table below, describes each option used for command line
 
 Option|Description
 -----|-----
-`psscan` | Shows all running processess, PID, PPID, Time Created, Time Exited
-`pstree` | Shows all parent processess visually
-`malprocfind -x` | shows malicious processess, `-x` includes closed processess
+`psscan` | Shows all running processes, PID, PPID, Time Created, Time Exited
+`pstree` | Shows all parent processes visually
+`malprocfind -x` | shows malicious processes, `-x` includes closed processes
 `malfind` | Finds hidden an injected code (You can add `--dump-dir=<dir>` for quick wins with a virus scanner)
 `psslist` | Shows name, ppid, started, handle counts but **Rootkits are invisible**
 `dlllist` | Shows loaded dll's, can also be useful for quickly seeing the command line uses for a process
-`psxview` | Comapre output to find hidden process **Hidden proccessess shows `false` in the first 2 columns**
-`shimcachemem` | Pulls the shimcache (*Windows application compatability database*) from memory
+`psxview` | Comapre output to find hidden process **Hidden processes shows `false` in the first 2 columns**
+`shimcachemem` | Pulls the shimcache (*Windows application compatibility database*) from memory
 `autoruns` | Scans memory for persistance
 `handles -s -t <Any combination of file,key,mutant,event,thread> -p <pid>` | Allows you to view all the handles of a given process
 `svcsan` | Shows windows services
 `threads` | Shows threads and loaded DLL's
-`memdump -p <pid>` | dumps the mmemory of a single process
-`getsids -p <pid>` | Lists the users, groups permissions and type of process, to acertain what permissions its running as, or, who has launched it
+`memdump -p <pid>` | dumps the memory of a single process
+`getsids -p <pid>` | Lists the users, groups permissions and type of process, to ascertain what permissions its running as, or, who has launched it
 `cmdline -p <pid>` | shows the command line used for an application 
 
 [*Back to table of contents*](#contents)
@@ -154,9 +154,9 @@ Vtypes are the kernels data structures in memory.
 This should be located on the boot drive as `/boot/System.map<Version>`
 
 ## Making a profile
-1. Copy the module.dward file and system.map into a zip file `zip <LinuxRelese-Version>.zip module.dwarf system.map`
+1. Copy the module.dwarf file and system.map into a zip file `zip <LinuxRelease-Version>.zip module.dwarf system.map`
 2. copy the zip file to `<volatilitydir>/plugins/overlays/linux`
-3. See if the profile is working with `vol.py --info | gerp Linux` and see if your names verion is there
+3. See if the profile is working with `vol.py --info | grep Linux` and see if your names version is there
 
 ## Basic Linux volatility commands
 ```
