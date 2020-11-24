@@ -9,7 +9,6 @@ header:
   teaser: /img/dsk/disk.jpg
 ---
 
-
 # Introduction
 This post aims to replicate my physical playbook on Disk Images and includes the following tools
 
@@ -17,7 +16,16 @@ This post aims to replicate my physical playbook on Disk Images and includes the
     - Ripl.pl
     - find (Hash unallocated files without extracting... find that malware)
 
-[*Back to table of contents*](#)
+# Contents
+- [Introduction](#introduction)
+- [Contents](#contents)
+  - [Overview](#overview)
+- [Using TSK to make a timeline](#using-tsk-to-make-a-timeline)
+  - [Triage Timeline](#triage-timeline)
+    - [timeline_noise.txt](#timeline_noisetxt)
+  - [MFT Timeline](#mft-timeline)
+  - [Quick Registry analysis](#quick-registry-analysis)
+  - [Hash all files, including unallocated with find on a live linux system](#hash-all-files-including-unallocated-with-find-on-a-live-linux-system)
 
 ## Overview
 
@@ -34,13 +42,13 @@ Command | Description | Comments | Use
 `icat -o <offset> <filename> <inode>` | cat's out the file to STDOUT, can be redirected to make a copy of the file by adding `> file.txt`. | - | [![icat](/img/dsk/icat.png)](/img/dsk/icat.png)
 `tsk_recover -o <offset> <filename> -e -d <Directory inode>` | Extracts an entire directories files, including those that are unallocated, useful for deleted files | - | [![tsk](/img/dsk/tsk.png)](/img/dsk/tsk.png)
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 # Using TSK to make a timeline
 
 You can tsk for more than just extracting files. Its one of the best, and most lightweight tools to make a quick MFTTimeline, or, Filesystem timeline. And, whats better, is there is no mounting, period, thank the DFIR Gods. This makes this one of the best and quickest triage tools to use.
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 ## Triage Timeline
 
@@ -51,7 +59,7 @@ Command | Description
 `mactime -b <bodyfile> -d -y -z <Timezone> <StartTime> <EndTime> > <outputfile>.csv`| Creates a csv timeline from the body file. Tzformat = `Australia/Sydney` TimeFormat = `2000-04-20T00:00:00` NOTE: `-z` with `<timezone>` `<StartTime>` or `<EndTime>` are optional **note** if you are unsure of the timezones **OR** times dont convert correctly , you can list them with `mactime -z list` if you get an error that states time module not loaded, you will need to install `sudo apt-get install libdatetime-perl`
 `grep -v -i -f timeline_noise.txt <outputfile>.csv > <outfile-final>.csv` | Reduces timeline noise
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 ### timeline_noise.txt
 
@@ -65,7 +73,7 @@ Command | Description
 `THREAD`\
 `DLL\ LOADTIME`
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 ## MFT Timeline
 
@@ -74,16 +82,16 @@ Command | Description
 `icat -o <offset> <filename> 0 > <directory>/mft.raw`| Extracts mft from disk for enhanced timeline
 `analyzeMFT.py -f <directory>/mft.raw -e -o mfttl.csv`| Generates a MFT CSV Timeline
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 ## Quick Registry analysis
 
 - `rip.pl -r NTUSER.DAT -p userassist` From the files extracted with tsk_recover, you can quickly get the userassist keys. If you want to see other types you can use --help
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
 
 ## Hash all files, including unallocated with find on a live linux system
 
 -`find . -type f -exec md5sum "{}" \;`
 
-[*Back to table of contents*](#)
+[*Back to table of contents*](#contents))
