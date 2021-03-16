@@ -29,7 +29,7 @@ This post aims to consolidate a list of useful smartphone codes
 # Smartphone Codes
 
 1. Note: If the phone has not been setup, you may be able to enter these codes by using the emergency call then entering these codes
-2. For those note listed, ![hardreset info](https://www.hardreset.info/smartphones) may be useful
+2. For those note listed, [hardreset info](https://www.hardreset.info/smartphones) may be useful
 
 ## All
 
