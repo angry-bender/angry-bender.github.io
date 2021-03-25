@@ -416,6 +416,10 @@ Command | Description
 
 <https://regex101.com/>
 
+### Email Address's regex resource
+
+<https://emailregex.com/>
+
 ### IP Address regex
 
 Not 100% valid, as will match all numbers outside of 255-999, but good for a quick win
