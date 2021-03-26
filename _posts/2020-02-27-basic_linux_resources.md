@@ -416,7 +416,7 @@ Command | Description
 
 <https://regex101.com/>
 
-### Email Address's regex resource
+### Email Address's regex resources - Apparently, not as easy as it sounds
 
 <https://emailregex.com/>
 
