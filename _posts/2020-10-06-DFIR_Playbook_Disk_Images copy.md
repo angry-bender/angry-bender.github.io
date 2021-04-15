@@ -26,6 +26,7 @@ This post aims to replicate my physical playbook on Disk Images and includes the
   - [MFT Timeline](#mft-timeline)
   - [Quick Registry analysis](#quick-registry-analysis)
   - [Hash all files, including unallocated with find on a live linux system](#hash-all-files-including-unallocated-with-find-on-a-live-linux-system)
+  - [Get the the offset of a files physical location on disk](#Get-the-physical-location-of-a-file-on-disk)
 
 ## Overview
 
@@ -93,5 +94,9 @@ Command | Description
 ## Hash all files, including unallocated with find on a live linux system
 
 -`find . -type f -exec md5sum "{}" \;`
+
+## Get the physical location of a file on disk
+
+-`filefrag -v <filename>`
 
 [*Back to table of contents*](#contents))
