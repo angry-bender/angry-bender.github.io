@@ -8,6 +8,8 @@ comments: true
 header:
   teaser: /img/lt/tux.jpg
 ---
+# Last Update
+15APR21 - Added filefrag command
 
 # Introduction
 These resources Have been provided for a  Linux course I have had to instruct. It contains a command cheat sheet & posts that will help basic analysts be able use and research how to use Linux.
@@ -318,6 +320,10 @@ add the following line to the end
 then, after using an awk, or any method of reducing data down to a single character, pipe it to forensicate, and get your quick wins
 
 ![forensicate](/img/lt/forensicate.png)
+
+Command | Description
+-------|-------
+filefrag -v | Gives you the offset of where a file is physically on disk
 
 [*Back to table of contents*](#)
 
