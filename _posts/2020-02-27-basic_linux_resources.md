@@ -308,7 +308,7 @@ Command | Description
 
 Command | Description
 -------|-------
-filefrag -v | Gives you the offset of where a file is physically on disk
+filefrag -v <filename> | Gives you the offset of where a file is physically on disk
 
 # Set a forensics alias.... to you know, forensicate
 
