@@ -306,6 +306,10 @@ Command | Description
 
 # Basic Forensics Commands
 
+Command | Description
+-------|-------
+filefrag -v | Gives you the offset of where a file is physically on disk
+
 # Set a forensics alias.... to you know, forensicate
 
 open your `~/.bashrc`
@@ -320,10 +324,6 @@ add the following line to the end
 then, after using an awk, or any method of reducing data down to a single character, pipe it to forensicate, and get your quick wins
 
 ![forensicate](/img/lt/forensicate.png)
-
-Command | Description
--------|-------
-filefrag -v | Gives you the offset of where a file is physically on disk
 
 [*Back to table of contents*](#)
 
