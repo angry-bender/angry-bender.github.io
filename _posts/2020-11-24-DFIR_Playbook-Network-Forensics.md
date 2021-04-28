@@ -58,6 +58,7 @@ Forensics Analysis | `tshark -r <pcap file> -Y <display filters> -T fields -e <F
 Filter pcaps (Reduce them down) | `tcpdump -n -r <pcapfile> -w out.pcap <filter>` <br> filter could be `udp and port 53` for DNS traffic see [TCP Dump filters](http://alumni.cs.ucr.edu/~marios/ethereal-tcpdump.pdf) for more examples
 Dump netflow | `nfdump -R <inputdirectory> <options> <filter> -o fmt.<format string>` <br> see [572 Poster](https://digital-forensics.sans.org/media/DFPS_FOR572_v1.6_4-19.pdf) for usage
 Convert PCAP to http.log, files.log, conn.log <br> Not nativley included in SIFT, download from [zeek-packages](https://software.opensuse.org//download.html?project=security%3Azeek&package=zeek-lts) | `zeek -r <filename>`
+Filter zeek columns | `cat http.log | zeek-cut column_name`
 
 # Netflow
 1. WIP
