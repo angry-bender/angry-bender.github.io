@@ -282,7 +282,7 @@ Command | Description
 `dpkg –r <packagename>`	| remove a package installed by <.deb> file
 `dpkg --list` | list all installed packages
 `fuser -k /var/lib/apt/lists/lock`	| Tries to kill the process accessing the package lock file gracefully
-`lsof -t /var/lib/apt/lists/lock \| xargs kill -9`	| Tries to kill the process accessing the package lock file ungracefully <Use with caution>
+`lsof -t /var/lib/apt/lists/lock | xargs kill -9`	| Tries to kill the process accessing the package lock file ungracefully <Use with caution>
  
 [*Back to table of contents*](#)
 
@@ -299,7 +299,7 @@ Command | Description
 `passwd <username>` | change a users password
 `cat /etc/group` |	List groups on system	
 `cat /etc/passwd`	| List users on system	
-`echo <Username>\|<Password> \| chpassword` | Allows passwords to be scripted in bash for new users	
+`echo <Username>|<Password>| chpassword` | Allows passwords to be scripted in bash for new users	
 `su - <username>` | switch to a new user and use their shell environment
 
 [*Back to table of contents*](#)
@@ -308,7 +308,7 @@ Command | Description
 
 Command | Description
 -------|-------
-filefrag -v <filename> | Gives you the offset of where a file is physically on disk
+`filefrag -v <filename>` | Gives you the offset of where a file is physically on disk
 
 # Set a forensics alias.... to you know, forensicate
 
@@ -354,7 +354,7 @@ Command | Description
 `grep –x “boo”  <filename>`| Exact Matches
 `grep –A2 “aara” <filename>`|	Prints extra lines for Context
 `grep –E “e$” <filename>`| Use a Regular expression 
-`egrep ‘<pattern1>\|<pattern2>’ <filename>`| enhanced grep to search for two patterns simultaneously
+`egrep ‘<pattern1>|<pattern2>’ <filename>`| enhanced grep to search for two patterns simultaneously
 
 [*Back to table of contents*](#)
 
