@@ -39,7 +39,7 @@ Command | Description | Comments | Use
 `fls -o <Offset> <filename> -D`| shows only directories the directories avialable. | - | [![flsd](/img/dsk/flsd.png)](/img/dsk/flsd.png)
 `fls -o <offset> <filename> <inode>`| lists the contents of a given directory. | - | - [![flsi](/img/dsk/flsi.png)](/img/dsk/flsi.png)
 `fls -o <offset> <filename> <inode> -r` | lists the contents of a given directory and all its sub directories | - | [![flsr](/img/dsk/flsr.png)](/img/dsk/flsr.png)
-`fls -l -z <TimeZoneofMachine> -o <offset> <filename> <inode>` | lists the times on files | - | -
+`fls -l -z <TimeZoneofMachine> -o <offset> <filename> <inode>` | lists the times on files | Format: file_type inode file_name mod_time acc_time chg_time cre_time size uid gid | -
 `icat -o <offset> <filename> <inode>` | cat's out the file to STDOUT, can be redirected to make a copy of the file by adding `> file.txt`. | - | [![icat](/img/dsk/icat.png)](/img/dsk/icat.png)
 `tsk_recover -o <offset> <filename> -e -d <Directory inode>` | Extracts an entire directories files, including those that are unallocated, useful for deleted files | - | [![tsk](/img/dsk/tsk.png)](/img/dsk/tsk.png)
 
