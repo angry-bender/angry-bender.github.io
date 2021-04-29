@@ -7,6 +7,7 @@ tags: [dfir, disk, tsk, mft, timeline]
 comments: false
 header:
   teaser: /img/dsk/disk.jpg
+note: Users/user/AppData/Local/Microsoft/Outlook pstfile location
 ---
 
 # Introduction
