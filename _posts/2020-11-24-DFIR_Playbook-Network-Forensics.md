@@ -42,7 +42,7 @@ pcap|dns| `passivedns -r <pcapfile> -l dnslog.txt -L nxdomain.txt` *Not included
 pcapng|pcap| `tcpdump -r <pcapngfile> -w pcap.pcap`
 gz|grep'able text| `zcat <gzfile>`
 LargePCAP|FilteredPCAP| `tcpdump port 80 -r in.pcap -w out.pcap`
-LargePCAP|PlainTextWebPCAP| `tshark -r Capture.pcap -Y "http.request or http.response or dns" -w Capture-Web.pcap` Note:this is to get all ports, http alone will not work
+LargePCAP|PlainTextWebPCAP| `tshark -r Capture.pcap -Y "http.request or http.response or dns" -w Capture-Web.pcap` Note:tshark will ONLY capture port 80, if HTTP traffic is on other ports, use TCPDump with port numbers
 
 [*Back to table of contents*](#Contents)
 
