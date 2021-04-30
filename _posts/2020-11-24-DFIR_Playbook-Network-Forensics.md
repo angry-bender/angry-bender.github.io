@@ -62,6 +62,17 @@ Dump netflow | `nfdump -R <inputdirectory> <options> <filter> -o fmt.<format str
 Convert PCAP to http.log, files.log, conn.log <br> Not nativley included in SIFT, download from [zeek-packages](https://software.opensuse.org//download.html?project=security%3Azeek&package=zeek-lts) | `zeek -r <filename>`
 Filter zeek columns | `cat http.log | zeek-cut column_name`
 
+# Extracting Certificates for TLS Traffic
+1. Open Wireshark
+2. Find the relevant certificate with the following wireshark filter `tls.handshake.type == 11` and an identifier such as IP or domain name that resolves to that endpoint
+3. Right click the certificate entry and selct "Export Packet Bytes"
+![image](https://user-images.githubusercontent.com/18164137/116642332-bd949600-a9ad-11eb-9d6e-5bed8742999b.png)
+4. Save the file as a .der certificate
+5. Convert to pem with openssl x509 -inform der -in hotjar.der -out hotjar.pem
+
+
+
+
 # Netflow
 1. WIP
 
