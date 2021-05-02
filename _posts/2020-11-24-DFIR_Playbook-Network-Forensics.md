@@ -64,8 +64,8 @@ Filter zeek columns | `cat http.log | zeek-cut column_name`
 
 # Extracting Certificates for TLS Traffic
 1. Open Wireshark
-2. Find the relevant certificate with the following wireshark filter `tls.handshake.type == 11` and an identifier such as IP or domain name that resolves to that endpoint. You can also use `tls.handshake.extensions_server_name contains <name>` if you know the domain name.
-3. Right click the certificate entry and selct "Export Packet Bytes"
+2. Find the relevant certificate with the following wireshark filter `tls.handshake.type == 11` and an identifier such as IP or domain name that resolves to that endpoint. You can also use `tls.handshake.extensions_server_name contains <name>` if you know the domain name then follow the stream.
+4. Right click the certificate entry and selct "Export Packet Bytes"
 ![image](https://user-images.githubusercontent.com/18164137/116642332-bd949600-a9ad-11eb-9d6e-5bed8742999b.png)
 4. Save the file as a .der certificate
 5. Convert to pem with openssl x509 -inform der -in hotjar.der -out hotjar.pem
