@@ -61,6 +61,7 @@ Filter pcaps (Reduce them down) | `tcpdump -n -r <pcapfile> -w out.pcap <filter>
 Dump netflow | `nfdump -R <inputdirectory> <options> <filter> -o fmt.<format string>` <br> see [572 Poster](https://digital-forensics.sans.org/media/DFPS_FOR572_v1.6_4-19.pdf) for usage
 Convert PCAP to http.log, files.log, conn.log <br> Not nativley included in SIFT, download from [zeek-packages](https://software.opensuse.org//download.html?project=security%3Azeek&package=zeek-lts) | `zeek -r <filename>`
 Filter zeek columns | `cat http.log | zeek-cut column_name`
+DNS Quick Wins | tshark -r `<pcap file>` -z dns,tree | grep <domain>
 
 # Extracting Certificates for TLS Traffic
 1. Open Wireshark
