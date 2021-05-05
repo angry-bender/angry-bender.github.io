@@ -23,6 +23,7 @@ This post aims to replicate my physical playbook on Memory Analysis and includes
   - [Determine profile](#determine-profile)
   - [Quick IOC Wins (Get the files, dump the files, scan the files)](#quick-ioc-wins-get-the-files-dump-the-files-scan-the-files)
   - [Analyse processes](#analyse-processes)
+    - [Analyse malicious process that has disappeared from pslist to determine pid and process name](#analyse-malicious-process-that-has-disappeared-from-pslist-to-determine-pid-and-process-name)
   - [Analyse System](#analyse-system)
   - [Analyse Network](#analyse-network)
   - [Code Injection](#code-injection)
@@ -92,6 +93,20 @@ Option|Description
 `memdump -p <pid>` | dumps the memory of a single process
 `getsids -p <pid>` | Lists the users, groups permissions and type of process, to ascertain what permissions its running as, or, who has launched it
 `cmdline -p <pid>` | shows the command line used for an application 
+
+### Analyse malicious process that has disappeared from pslist to determine pid and process name
+
+From - https://code.google.com/archive/p/volatility/wikis/CommandReference.wiki -Misc -Strings
+
+```
+For a given image and a file with lines of the form <decimal_offset>:<string>, output the corresponding process and virtual addresses where that string can be found. Expected input for this tool is the output of Microsoft Sysinternals' Strings utility, or another utility that provides similarly formatted offset:string mappings. Note that the input offsets are physical offsets from the start of the file/image.
+```
+
+1. `Strings -le -td <file> | grep <processname> > strings.txt`
+2. Edit strings.txt to only include the line of interest
+3. `vol.py -f <imagename> --profile <profile> strings -s strings.txt` 
+
+The output should contain the PID and process name
 
 [*Back to table of contents*](#contents)
 
