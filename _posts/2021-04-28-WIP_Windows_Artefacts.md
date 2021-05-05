@@ -6,7 +6,7 @@ subtitle: An extract from my Physical Playbook
 tags: [dfir, windows]
 comments: false
 header:
-  teaser: [zt](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaPxzKoMu88RECpi3OkBUhdgq7afyKpPW8gw&usqp=CAU)
+  teaser: /img/net/network.png
 ---
 
 # Event log Parsing
