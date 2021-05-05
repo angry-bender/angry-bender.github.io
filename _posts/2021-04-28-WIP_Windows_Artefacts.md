@@ -6,9 +6,20 @@ subtitle: An extract from my Physical Playbook
 tags: [dfir, windows]
 comments: false
 header:
-  teaser: /img/net/network.png
+  teaser: /img/zt.jpg
 ---
+# Introduction
+This post aims to replicate my physical playbook on windows. Unlike other playbooks, it is not tool centric, rather it is concept/artefact centric.
 
+# Contents
+- [Introduction](#introduction)
+- [Contents](#contents)
+- [Event log Parsing](#event-log-parsing)
+- [Registry Parsing](#registry-parsing)
+- [Prefetch Files](#prefetch-files)
+- [OST Files](#ost-files)
+- [Officemacros](#officemacros)
+- [WMI Event Consumers](#wmi-event-consumers)
 # Event log Parsing
 Log Location  Vista+\2008+ `%SYSTEMROOT%\winevt\logs`
 Log Location XP\2003- `%SYSTEMROOT%\config
