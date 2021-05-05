@@ -1,7 +1,7 @@
 ---
 categories:
   - blog
-title: DFIR Playbook - Windows Forensics
+title: DFIR Playbook - Windows Forensics(WIP APR21)
 subtitle: An extract from my Physical Playbook
 tags: [dfir, windows]
 comments: false
@@ -9,8 +9,9 @@ header:
   teaser: /img/zt.jpg
 ---
 # Introduction
-This post aims to replicate my physical playbook on windows. Unlike other playbooks, it is not tool centric, rather it is concept/artefact centric.
+*not complete, apr 2021, this is quite a large playbook to replicate*
 
+This post aims to replicate my physical playbook on windows. Unlike other playbooks, it is not tool centric, rather it is concept/artefact centric.
 # Contents
 - [Introduction](#introduction)
 - [Contents](#contents)
