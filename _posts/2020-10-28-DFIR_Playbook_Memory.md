@@ -98,9 +98,9 @@ Option|Description
 
 From - https://code.google.com/archive/p/volatility/wikis/CommandReference.wiki -Misc -Strings
 
-```
+
 For a given image and a file with lines of the form <decimal_offset>:<string>, output the corresponding process and virtual addresses where that string can be found. Expected input for this tool is the output of Microsoft Sysinternals' Strings utility, or another utility that provides similarly formatted offset:string mappings. Note that the input offsets are physical offsets from the start of the file/image.
-```
+
 
 1. `Strings -le -td <file> | grep <processname> > strings.txt`
 2. Edit strings.txt to only include the line of interest

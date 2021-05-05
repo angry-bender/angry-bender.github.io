@@ -15,7 +15,7 @@ Log Location XP\2003- `%SYSTEMROOT%\config
 Event Log explorer
 Evtxexport
 
-#Registry Parsing
+# Registry Parsing
 Location `%SYSTEMROOT%\config`
 Registry Explorer
 rip.pl
@@ -39,7 +39,7 @@ Ntuser.dat | HKCU (Of current profile)
 %USERPROFILE%\Local Settings\Application Data\Microsoft\Windows\Usrclass.dat | XP\2003- HKCU All Users
 %USERPROFILE%\AppData\Local\Microsoft\Windows\Usrclass.dat | Vista\2008+  HKCU All Users
 
-#Prefetch Files
+# Prefetch Files
 Location C:\Windows\Prefetch
 WinPrefetchView
 Volatility - PrefetchParser
