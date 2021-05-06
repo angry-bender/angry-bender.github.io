@@ -17,6 +17,8 @@ This post aims to replicate my physical playbook on windows. Unlike other playbo
 - [Contents](#contents)
 - [Event log Parsing](#event-log-parsing)
 - [Registry Parsing](#registry-parsing)
+  - [Shellbags](#shellbags)
+  - [Shimcache](#shimcache)
 - [Prefetch Files](#prefetch-files)
 - [OST Files](#ost-files)
 - [Officemacros](#officemacros)
@@ -25,8 +27,8 @@ This post aims to replicate my physical playbook on windows. Unlike other playbo
 Log Location  Vista+\2008+ `%SYSTEMROOT%\winevt\logs`
 Log Location XP\2003- `%SYSTEMROOT%\config
 Event Log explorer
-Evtxexport
-
+Evtxexport (linux)
+EvtxEcmd.exe -f <filename> --csv <outputdirectory>
 # Registry Parsing
 Location `%SYSTEMROOT%\config`
 Registry Explorer
@@ -50,6 +52,15 @@ Filename | Hive
 Ntuser.dat | HKCU (Of current profile)  
 %USERPROFILE%\Local Settings\Application Data\Microsoft\Windows\Usrclass.dat | XP\2003- HKCU All Users
 %USERPROFILE%\AppData\Local\Microsoft\Windows\Usrclass.dat | Vista\2008+  HKCU All Users
+
+## Shellbags
+
+Can use Ntuser.dat, but, userclass.dat is more verbose.
+
+## Shimcache
+
+Location \%SystemRoot%\AppCompat\Programs\Amcache.hve
+HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatibility\AppCompatCache
 
 # Prefetch Files
 Location C:\Windows\Prefetch
