@@ -7,7 +7,6 @@ tags: [dfir, windows]
 comments: false
 header:
   teaser: /img/zt.jpg
-last_modified_at:   2020-05-10 06:18:00 +0000
 ---
 # Introduction
 *note this post is incomplete, apr 2021, this is quite a large playbook to replicate*
