@@ -13,7 +13,7 @@ header:
 
 This blog aims to ELI5, how negative numbers are stored in the Windows Registry, or any other DWORD for that matter. Why you may ask? Well, some keys like the `SYSTEM\CurrentControlSet\Control\TimeZoneInformation\Bias`, could well be a negative number. Which makes for some interesting CompSci Explanation. 
 
-**NOTE: I love tables / Graphs / Visual aides, this will not be an in depths mathematical write-up, if you want the math, this isn't the place**
+**NOTE: I love tables / Graphs / Visual aides, this will not be an in depth mathematical write-up, if you want the math, this isn't the place**
 
 
 
