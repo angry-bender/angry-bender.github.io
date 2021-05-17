@@ -23,7 +23,6 @@ This blog aims to ELI5, how negative numbers are stored in the Windows Registry,
 
 ref - https://docs.microsoft.com/en-us/windows/win32/api/timezoneapi/ns-timezoneapi-time_zone_information
 
-Well then, I'm glad you asked. 
 
 When checking a computer systems time drift, windows may keep a record of the computers drift from a server on the internet, as such its important to look at the following registry key in a DFIR Investigation for time correlation..
 
@@ -33,6 +32,10 @@ has a RegDWORD Value
 This registry key is stored as a 32BIT, Unsigned, Little Endian, DWORD. For those not in the US (Anyone on a +x UTC Timezone) this key is stored as
 
 UTC=Local Time + bias
+
+Basically, windows knows how to interpret this key, but at first glance when you see 45781654  you might be thinking how, can that be actual minutes from UTC, are we on mars? No, we're not on mars, we're just dealing with how computers understand and store numbers, which like a martian is different to us.
+
+But, its just a way to store data, a type of data, that windows understands, but a human doesnt quickly understand without conversion, to convert to a human readable format, you'll need to do the below;
 
 For those in a + timezone, we have a negative bias so need to calculate it, lets do it with the following key.
 
