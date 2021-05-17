@@ -11,7 +11,7 @@ header:
 
 # Introduction
 
-This blog aims to ELI5, how negative numbers are stored in the Windows Registry, or any other DWORD for that matter. Why you may ask? Well, some keys like the SYSTEM\CurrentControlSet\Control\TimeZoneInformation\Bias, could well be a negative number. Which makes for some interesting CompSci Explanation. 
+This blog aims to ELI5, how negative numbers are stored in the Windows Registry, or any other DWORD for that matter. Why you may ask? Well, some keys like the `SYSTEM\CurrentControlSet\Control\TimeZoneInformation\Bias`, could well be a negative number. Which makes for some interesting CompSci Explanation. 
 
 **NOTE: I love tables / Graphs / Visual aides, this will not be an in depths mathematical write-up, if you want the math, this isn't the place**
 
@@ -27,7 +27,7 @@ Well then, I'm glad you asked.
 
 When checking a computer systems time drift, windows may keep a record of the computers drift from a server on the internet, as such its important to look at the following registry key in a DFIR Investigation for time correlation..
 
-the HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\ActiveTimeBias
+the `HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\ActiveTimeBias`
 has a RegDWORD Value
 
 This registry key is stored as a 32BIT, Unsigned, Little Endian, DWORD. For those not in the US (Anyone on a +x UTC Timezone) this key is stored as
