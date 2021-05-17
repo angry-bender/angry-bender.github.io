@@ -36,7 +36,7 @@ UTC=Local Time + bias
 
 For those in a + timezone, we have a negative bias so need to calculate it, lets do it with the following key.
 
-![set6](../img/dword/Set6.jpg)
+![set6](../../img/dword/Set6.jpg)
 
 Little endian = C6 FD FF FF
 Big Endian = FF FF FD C6
@@ -151,7 +151,7 @@ As time went on, and we wanted more complex data in our computers, like emoji's 
 
 Okay, lets recap here with a nice table picture
 
-![bbwdw](../img/dword/bbwdw.jpg)
+![bbwdw](../../img/dword/bbwdw.jpg)
 
 # 2. Okay, so we have the puppies, now what? (Data in words)
 
@@ -216,11 +216,11 @@ Okay, so now again we get more complicated, as we need to discuss a couple more 
 
 So, in a DWORD, a positive number is simple, it works the same way as we've seen above. To demonstrate i'll show a windows registry value below with the number 1337
 
-![set1](../img/dword/Set1.jpg)
+![set1](../../img/dword/Set1.jpg)
 
 Now, lets see this data stored with a forensics tool to see the raw data.
 
-![set2](../img/dword/Set2.jpg)
+![set2](../../img/dword/Set2.jpg)
 
 Whoah, what, i swear we skipped a few steps there, i hear you say, what are we looking at i hear you say... you explination su..... shh... patience its coming ;-)
 
@@ -371,17 +371,16 @@ Firsly to convert binary to a 1's compliment, we flip the 1's into zeros (Dont w
 
 Lets keep it simple first, and represent 9
 
-
 128|64|32|16|8|4|2|1
 ---|--|--|--|-|-|-|-
 0|0|0|0|1|0|0|1
 
 So Negative lets firstly flip to 1's compliment
 
-
 128|64|32|16|8|4|2|1
 ---|--|--|--|-|-|-|-
 1|1|1|1|0|1|1|0
+
 To make this number into a 2's compliment add one
 
 So Negative lets firstly flip to 1's compliment
@@ -415,13 +414,13 @@ Okay, lets now try with our 1337....
 0|0|0|0|0|1|0|1|#|0|0|1|1|1|0|0|1
 
 Now, lets go to a one compliment (Flip those bits)
+
 32768|16384|8192|4096|2048|1024|512|256|#|128|64|32|16|8|4|2|1
 -----|-----|----|----|----|----|---|---|-|---|--|--|--|-|-|-|-|
 1|1|1|1|1|0|1|0|#|1|1|0|0|0|1|1|0
 
 Now, to a two's compliment (add one)
 
-Now, lets go to a one compliment (Flip those bits)
 32768|16384|8192|4096|2048|1024|512|256|#|128|64|32|16|8|4|2|1
 -----|-----|----|----|----|----|---|---|-|---|--|--|--|-|-|-|-|
 1|1|1|1|1|0|1|0|#|1|1|0|0|0|1|1|1
@@ -453,9 +452,9 @@ Little endian = C7 FA 00 00
 
 Lets see if the conversions are right in the registry key (Note, registry keys are stored in Human (Big endian, When entering a value)
 
-![set4](../img/dword/Set4.jpg)
+![set4](../../img/dword/Set4.jpg)
 
-![set5](../img/dword/Set5.jpg)
+![set5](../../img/dword/Set5.jpg)
 
 # 8 Okay, all that effort, so what
 
