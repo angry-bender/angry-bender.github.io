@@ -350,7 +350,7 @@ A signed integer is a little more fancy, it can actually store a negative number
 
 -[Reference](https://en.wikipedia.org/wiki/Two%27s_complement)
 
-- [![Reference (Visual Explanation)](https://img.youtube.com/vi/sJXTo3EZoxM/0.jpg)]
+- ![Reference (Visual Explanation)](https://img.youtube.com/vi/sJXTo3EZoxM/0.jpg)
 
 A DWORD is unsigned, which means to represent negative numbers, it has a series of 1's in front of it. 
 
