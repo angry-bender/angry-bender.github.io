@@ -2,11 +2,11 @@
 categories:
   - blog
 title: Negative Decimal DWORD to Human Format
-subtitle: An extract from my Physical Playbook
-tags: [dfir, windows]
+subtitle: ELI5 Negative DWORD Numbers
+tags: [dfir, windows, verification]
 comments: false
 header:
-  teaser: /img/zt.jpg
+  teaser: /img/dword/bbwdw.jpg
 ---
 
 # Introduction
