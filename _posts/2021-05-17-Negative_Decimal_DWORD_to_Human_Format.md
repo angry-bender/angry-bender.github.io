@@ -132,7 +132,7 @@ Wait, so perhaps we should start with
 
 # 0. What the hell is binary
 
-![Reference (Visual Explanation)](https://www.youtube.com/watch?v=LpuPe81bc2w)
+[![Reference (Visual Explanation)](https://img.youtube.com/vi/LpuPe81bc2w/0.jpg)](https://www.youtube.com/watch?v=LpuPe81bc2w)
 
 Yeah, okay, this is a fair point what is binary. Well, see that computer, or for that matter anything with a switch like below?
 
@@ -350,7 +350,7 @@ A signed integer is a little more fancy, it can actually store a negative number
 
 -[Reference](https://en.wikipedia.org/wiki/Two%27s_complement)
 
-![Reference Visual Aide](https://youtu.be/sJXTo3EZoxM)
+- [![Reference (Visual Explanation)](https://img.youtube.com/vi/sJXTo3EZoxM/0.jpg)]
 
 A DWORD is unsigned, which means to represent negative numbers, it has a series of 1's in front of it. 
 
