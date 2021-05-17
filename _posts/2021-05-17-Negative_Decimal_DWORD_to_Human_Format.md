@@ -21,7 +21,7 @@ This blog aims to ELI5, how negative numbers are stored in the Windows Registry,
 
 (If you want to read the full article, See [Contents](#contents) )
 
-ref - https://docs.microsoft.com/en-us/windows/win32/api/timezoneapi/ns-timezoneapi-time_zone_information
+[Reference](https://docs.microsoft.com/en-us/windows/win32/api/timezoneapi/ns-timezoneapi-time_zone_information)
 
 
 When checking a computer systems time drift, windows may keep a record of the computers drift from a server on the internet, as such its important to look at the following registry key in a DFIR Investigation for time correlation..
@@ -132,7 +132,7 @@ Wait, so perhaps we should start with
 
 # 0. What the hell is binary
 
-- Ref https://www.youtube.com/watch?v=LpuPe81bc2w
+- [Reference (Visual Explination)](https://www.youtube.com/watch?v=LpuPe81bc2w)
 
 Yeah, okay, this is a fair point what is binary. Well, see that computer, or for that matter anything with a switch like below?
 
@@ -340,7 +340,7 @@ Wow, we have our value back, after all that russian (endian) and weird counting 
 
 # 7. Signed / Unsigned Numbers, the great negative number
 
-- Ref https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types
+- [Reference](https://docs.microsoft.com/en-us/windows/win32/winprog/windows-data-types)
 
 A computer, with a DWORD can read between 0 -  4294967295. Notice this number has no room for negative numbers. This is where signed and unsigned numbers come in.
 
@@ -348,9 +348,9 @@ A signed integer is a little more fancy, it can actually store a negative number
 
 ## 7.1 Unsigned Numbers (Windows DWORD's)
 
--Ref https://en.wikipedia.org/wiki/Two%27s_complement
+-[Reference](https://en.wikipedia.org/wiki/Two%27s_complement)
 
--Ref https://www.youtube.com/watch?v=4qH4unVtJkE
+-[Reference Visual Aide](https://youtu.be/sJXTo3EZoxM)
 
 A DWORD is unsigned, which means to represent negative numbers, it has a series of 1's in front of it. 
 
