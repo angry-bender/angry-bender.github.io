@@ -132,7 +132,7 @@ Wait, so perhaps we should start with
 
 # 0. What the hell is binary
 
-![Reference (Visual Explination)](https://www.youtube.com/watch?v=LpuPe81bc2w)
+![Reference (Visual Explanation)](https://www.youtube.com/watch?v=LpuPe81bc2w)
 
 Yeah, okay, this is a fair point what is binary. Well, see that computer, or for that matter anything with a switch like below?
 
