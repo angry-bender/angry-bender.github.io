@@ -289,13 +289,13 @@ As if this wernt enough :facepalm: windows likes to store its data in little end
 
 ![usefulmeme](https://i.redd.it/1vd76yq4gutz.jpg)
 
-Okay, as an english speaker, you read right to left yes? well russians read left to right. This goes the same for how windows stores a DWORD. (Before you hate, simple peeps, simpple, i dont want to scare people off with Significant bits OKAY!!)
+Okay, as an english speaker, you read right to left yes? well russians read left to right. This goes the same for how windows stores a DWORD. (Before you hate, simple peeps, simple, i dont want to scare people off with Significant bits OKAY!!)
 
 ![yodaBits](https://media1.popsugar-assets.com/files/thumbor/JvSqhD_EXAytoP4rwBbbYPoNQ7Q/133x543:894x1304/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/12/01/753/n/1922283/e343aa995de3f2d275cbd6.74705204_/i/baby-yoda-memes.jpg)
 
-Dont fret though for our explication (Missing a whole lot of stuff, *This disclaimer has been placed so some compsci professor doesnt backhand me*), even though memory reads left to right, its only a little harder than russian. Basically, notice how for such a small number we have heaps of 0's? 
+Don't fret though for our explication (Missing a whole lot of stuff, *This disclaimer has been placed so some compsci professor doesn't backhand me*), even though memory reads left to right, its only a little harder than russian. Basically, notice how for such a small number we have heaps of 0's? 
 
-with 39 05 00 00, that itself would mean a huge number when looking at our afformentioned table
+with 39 05 00 00, that itself would mean a huge number when looking at our aforementioned table
 
 32768|16384|8192|4096|2048|1024|512|256|#|128|64|32|16|8|4|2|1
 -----|-----|----|----|----|----|---|---|-|---|--|--|--|-|-|-|-|
@@ -359,7 +359,7 @@ Big Endian = 00 00 05 39
 
 ![wasted zeros](https://www.zadara.com/wp-content/uploads/the-cost-of-wasted-storage-capacity.jpg)
 
-Thats a lot of wasted zero's right, what if i told you they had another purpose? We'll, there is, unfortunatley somone had to invite the mathematician to the table, and give it a name called Two's Compliment. You could read wikipedia, and get confused with 
+Thats a lot of wasted zero's right, what if i told you they had another purpose? We'll, there is, unfortunately someone had to invite the mathematician to the table, and give it a name called Two's Compliment. You could read wikipedia, and get confused with 
 
 ```
 if the binary number 0102 encodes the signed integer 210, then its two's complement, 1102, encodes the inverse: −210. In other words, to reverse the sign of most integers (all but one of them) in this scheme, you can take the two's complement of its binary representation.[2] The tables at right illustrate this property. 
