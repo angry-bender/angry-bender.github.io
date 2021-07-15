@@ -8,6 +8,9 @@ comments: false
 header:
   teaser: /img/zt.jpg
 ---
+# Last Updated
+
+15JUL21
 # Introduction
 
 *note this post is incomplete, apr 2021, this is quite a large playbook to replicate*
@@ -24,6 +27,7 @@ Windows VM - [WINSIFT](https://github.com/angry-bender/forensicssetup)
 
 # Contents
 
+- [Last Updated](#last-updated)
 - [Introduction](#introduction)
 - [Scripted Environment Setup](#scripted-environment-setup)
 - [Contents](#contents)
@@ -55,6 +59,7 @@ Windows VM - [WINSIFT](https://github.com/angry-bender/forensicssetup)
   - [User Activity](#user-activity)
     - [Shellbags](#shellbags)
     - [Shimcache](#shimcache)
+    - [Windows 10 Notifications](#windows-10-notifications)
 
 # Fundamentals
 
@@ -295,3 +300,13 @@ Can use Ntuser.dat, but, userclass.dat is more verbose.
 
 Location \%SystemRoot%\AppCompat\Programs\Amcache.hve
 HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatibility\AppCompatCache
+
+### Windows 10 Notifications
+
+Credit - <https://www.forensafe.com/blogs/win10notifications.html>
+
+Location %Userproile%\AppData\Local\Microsoft\Windows\Notifications
+
+This location is stored as an Sqlite database, you will need to use Sqlitebrowser to decode it.
+
+Microsoft also stores information about notifications in the following registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications 
