@@ -251,6 +251,8 @@ Command | Description | Order
 [*Back to table of contents*](#)
   
 ### Creating a profile for Systemd-networkd (networkd)
+  
+#### See also https://man.archlinux.org/man/systemd.netdev.5.en OR `man netdev`
 
 1. Review your interfaces with `networkctl`
 2. Review any existing configuration files under cat /etc/systemd/network/*
