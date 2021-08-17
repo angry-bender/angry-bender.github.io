@@ -225,6 +225,8 @@ Command | Description
 ## Networking
 
 ### The new systemd way (Manual Configuration)
+ 
+#### Note: This will not persist on a reboot
 
 Command | Description | Order
 -------|--------|------
@@ -247,6 +249,37 @@ Command | Description | Order
 `ifconfig` 	| verify your configuration	| 4
 
 [*Back to table of contents*](#)
+  
+### Creating a profile for Systemd-networkd (networkd)
+
+1. Review your interfaces with `networkctl`
+2. Review any existing configuration files under cat /etc/systemd/network/*
+3. If, there are exisiting configuration files, such as a file that contains 
+  
+  ```
+  [Match]
+  Name=e*
+  
+  [Network]
+  DHCP=true
+  ```
+  
+  This means any interface starting with e will be configured for DHCP, if this is desired, leave it as is.
+  
+  if you'd like a static IP, remove any file similar to above and create one as per the example below
+  
+  ```
+  [Match]
+  Name=ens133
+  
+  [Network]
+  Address=192.168.1.2
+  Gateway=192.168.0.1
+  ```
+  
+4. Save the file then ensure it has the correct security with `chmod 644 <filename>`
+5. Restart the service with `systemctl restart systemd-networkd`
+  
 
 ### Other network utilities & Troubleshooting tools
 
