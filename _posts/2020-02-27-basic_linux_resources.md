@@ -280,6 +280,9 @@ Command | Description | Order
 4. Save the file then ensure it has the correct security with `chmod 644 <filename>`
 5. Restart the service with `systemctl restart systemd-networkd`
   
+### Creating a profile for ubuntu
+
+ 1. In edit, review https://netplan.io/examples/
 
 ### Other network utilities & Troubleshooting tools
 
