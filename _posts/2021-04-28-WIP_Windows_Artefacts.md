@@ -169,13 +169,16 @@ A quick win for finding powershell or other types of scripts. Often, powershell 
 ## Persistance
 
 - Tools
-  - `recmd.exe -d <windows root> -bn <Registry Explorer root\batchexamples\registryASEPS.reb --ml --csv <outputdire>`
+  - `recmd.exe -d <windows root> -bn <Registry Explorer root\batchexamples\registryASEPS.reb --ml --csv <outputdiretory>`
 
   Note: If using [WINSIFT](https://github.com/angry-bender/forensicssetup) this directory is contained at `C:\NonChocoTools\ZimmermanTools\Registry Explorer\`
 
   This particular command extracts 500 of the most common persistance keys in windows. Its also likely used by KAPE if thats you're prefered method
 
   - `autorunsc.exe /accepteula -a * -c -h -s '*' -nobanner` - Note: In my experience this often doesnt catch WMI Event comsumers
+  
+  - the Kroll persitance script for registry from <https://github.com/EricZimmerman/RECmd/blob/master/BatchExamples/Kroll_Batch.reb>
+  --`recmd.exe -d <windows root> -bn <Registry Explorer root\batchexamples\kroll_batch.reb --ml --csv <outputdiretory>`
 
 ### WMI Event Consumers
 
