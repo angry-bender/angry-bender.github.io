@@ -7,6 +7,9 @@ tags: [sysadmin, linux]
 comments: true
 header:
   teaser: /img/lt/tux.jpg
+toc:
+  min_level: 1
+  max_level: 1
 ---
 # Last Update
 15APR21 - Added filefrag command
