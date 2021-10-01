@@ -95,6 +95,7 @@ defaults:
       related: true
       toc: true
       toc_icon: fas fa-clipboard-list
+      toc_sticky: false
       show_date: true
   # _pages
   - scope:
