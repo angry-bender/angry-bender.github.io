@@ -106,6 +106,7 @@ defaults:
       author_profile: false
       share: true
       related: true
+      toc: true
       
 
 category_archive:
