@@ -8,6 +8,8 @@ comments: true
 header:
   teaser: /img/lt/tux.jpg
 ---
+
+{:toc}
 # Last Update
 15APR21 - Added filefrag command
 
