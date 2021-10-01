@@ -9,11 +9,6 @@ header:
   teaser: /img/lt/tux.jpg
 ---
 
-# Contents header
-{:.no_toc}
-
-* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
-{:toc}
 # Last Update
 15APR21 - Added filefrag command
 
