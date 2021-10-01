@@ -93,7 +93,7 @@ defaults:
       comments: true
       share: true
       related: true
-      toc: false
+      toc: true
       toc_icon: fas fa-clipboard-list
       show_date: true
   # _pages
