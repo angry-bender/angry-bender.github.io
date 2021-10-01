@@ -379,7 +379,12 @@ Using [this](https://raw.githubusercontent.com/angry-bender/linuxtraining/master
 
 In this case, we have reduced the analyst's work, by reducing a file of over 1000 lines to 58, a much easier bit of data to sort through.
 
+
+
 ![grep](/img/lt/grep.png)
+
+
+>Note -  **WSL USERS** : If you are using Windows Subshell for Linux (WSL) you must edit any input file (Files you want to use with -f) within WSL (Use Nano or VIM). Using windows notepad will not work, due to the way it encodes.
 
 Command | Description
 -------|--------
@@ -392,6 +397,9 @@ Command | Description
 `grep –x “boo”  <filename>`| Exact Matches
 `grep –A2 “aara” <filename>`|	Prints extra lines for Context
 `grep –E “e$” <filename>`| Use a Regular expression 
+`grep -rail -f <sourcefile>` | Recursively list every file that contains a value from a source file
+`grep -raih -f <sourcefile>` | Recursively list every file and string that contains a value from a source file
+`grep -raiH -f <sourcefile>` | Recursively list string that contains a value from a source file
 `egrep ‘<pattern1>|<pattern2>’ <filename>`| enhanced grep to search for two patterns simultaneously
 
 [*Back to table of contents*](#)
