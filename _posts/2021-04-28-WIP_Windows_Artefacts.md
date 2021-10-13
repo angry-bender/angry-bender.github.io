@@ -222,6 +222,8 @@ Event ID | Description | Interpretation Notes
   
   
 ### Normal WMI Event consumers
+
+Ref - <https://support.sophos.com/support/s/article/KB-000038535?language=en_US&c__displayLanguage=en_US>
   
 The SCM Event consumer, is commonly present in most enterprise environments. Howver, is also modified by attackers. Here is an example of a known good, which can be found in objects.data or EID `5861`
   
