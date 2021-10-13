@@ -219,6 +219,43 @@ Event ID | Description | Interpretation Notes
 
 1. There is a wmiprvse.exe running without a PPID of svchost.exe
 2. scrons.exe is running
+  
+  
+### Normal WMI Event consumers
+  
+The SCM Event consumer, is commonly present in most enterprise environments. Howver, is also modified by attackers. Here is an example of a known good, which can be found in objects.data or EID `5861`
+  
+  ```
+           CreatorSID={1,2,0,0,0,0,0,5,32,0,0,0,32,2,0,0}
+           EventAccess=
+           EventNamespace=root\cimv2
+           Name=SCM Event Log Filter
+           Query=select * from MSFT_SCMEventLogEvent
+           QueryLanguage=WQL
+
+          Category=0
+          CreatorSID={1,2,0,0,0,0,0,5,32,0,0,0,32,2,0,0}
+          EventID=0
+          EventType=1
+          InsertionStringTemplates={""}
+          MachineName=
+          MaximumQueueSize=
+          Name=SCM Event Log Consumer
+          NameOfRawDataProperty=
+          NameOfUserSIDProperty=sid
+          NumberOfInsertionStrings=0
+          SourceName=Service Control Manager
+          UNCServerName=
+ 
+          Consumer="NTEventLogEventConsumer.Name="SCM Event Log Consumer""
+          CreatorSID={1,2,0,0,0,0,0,5,32,0,0,0,32,2,0,0}
+          DeliverSynchronously=FALSE
+          DeliveryQoS=
+          Filter="__EventFilter.Name="SCM Event Log Filter""
+          MaintainSecurityContext=FALSE
+          SlowDownProviders=FALSE
+
+  ```
 
 ### Registry
 
