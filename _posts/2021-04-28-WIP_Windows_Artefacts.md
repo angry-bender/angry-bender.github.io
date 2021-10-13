@@ -11,6 +11,7 @@ header:
 # Last Updated
 
 15JUL21
+
 # Introduction
 
 *note this post is incomplete, apr 2021, this is quite a large playbook to replicate*
@@ -45,6 +46,7 @@ Windows VM - [WINSIFT](https://github.com/angry-bender/forensicssetup)
       - [WMI Data](#wmi-data)
       - [WMI Events](#wmi-events)
       - [Non-Normal WMI Activity](#non-normal-wmi-activity)
+    - [Normal WMI Event consumers](#normal-wmi-event-consumers)
     - [Registry](#registry)
   - [Non-Standard Behavior](#non-standard-behavior)
   - [Useful Eventlogs](#useful-eventlogs)
@@ -220,12 +222,11 @@ Event ID | Description | Interpretation Notes
 1. There is a wmiprvse.exe running without a PPID of svchost.exe
 2. scrons.exe is running
   
-  
 ### Normal WMI Event consumers
 
 Ref - <https://support.sophos.com/support/s/article/KB-000038535?language=en_US&c__displayLanguage=en_US>
   
-The SCM Event consumer, is commonly present in most enterprise environments. Howver, is also modified by attackers. Here is an example of a known good, which can be found in objects.data or EID `5861`
+The SCM Event consumer, is commonly present in most enterprise environments. However, is also modified by attackers. Here is an example of a known good, which can be found in objects.data or EID `5861`
   
   ```
            CreatorSID={1,2,0,0,0,0,0,5,32,0,0,0,32,2,0,0}
@@ -305,9 +306,11 @@ Event ID | Description | Type
 - Tools
   - List all oledump.py <filename>
   - Deobfuscate compression oledump.py -v <filename> -s <matching index from oledump>
+
 # Activity Discovery
 
 ## Process Activity
+
 ### Prefetch Files
 
 - Location
@@ -328,7 +331,7 @@ Try to use this befre using the app compatability cache, as it may provide bette
 
 - Location
   -C:\windows\appcompat\programs\amcache.hve
-- Tools 
+- Tools
   - `amcacheparser.exe -f <hive file> --csv <output file>`
   - Registry Explorer
 
@@ -351,4 +354,4 @@ Location %Userproile%\AppData\Local\Microsoft\Windows\Notifications
 
 This location is stored as an Sqlite database, you will need to use Sqlitebrowser to decode it.
 
-Microsoft also stores information about notifications in the following registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications 
+Microsoft also stores information about notifications in the following registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications
