@@ -219,8 +219,10 @@ Event ID | Description | Interpretation Notes
 
 #### Non-Normal WMI Activity
 
+Ref - <https://threathunterplaybook.com/notebooks/windows/03_persistence/WIN-200902020333.html>
+
 1. There is a wmiprvse.exe running without a PPID of svchost.exe
-2. scrons.exe is running
+2. scrcons.exe is running
   
 ### Normal WMI Event consumers
 
