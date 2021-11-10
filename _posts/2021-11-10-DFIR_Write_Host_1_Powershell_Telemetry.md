@@ -141,7 +141,7 @@ This function is undocumented in the MSDN Library.
 
 When running `C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun -cv:<string>.1` the following appears to occur
 
-![Image](https://angry-bender.github.io/img/tel/3.jpg)
+[Image](https://angry-bender.github.io/img/tel/3.jpg)
 
 This shows that it is querying items in the registry, The `APPRAISER_TelemetryBaseline_UNV.bin` and StartupProfileData. The PowerShell Activity I observe appears to be related to the `PSScriptPolicyTest_<RandomID>.ps1` which is used to test against Microsoft App locker. I also see some file activity which is written to disk and a few values to registry are updated.
 
