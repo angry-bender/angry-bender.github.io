@@ -15,6 +15,8 @@ Heaps of reddit posts and AV posts have discussed this command at length, with g
 
 This activity belongs to the opted in Windows Telemetry done during windows setup for Windows 10/11 & 2019, so long as the output matches that at [Powershell Script Block](#powershell-script-block) and has the parent process of `C:\Windows\System32\CompatTelRunner.exe ` i don't believe it is malicious.
 
+However, this can be used for persistence, so if your unsure you should check the contents of the registry key at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController` or check if the scheduled task has been modified. See more [here]<https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence/?utm_content=131234033&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306>
+
 ## Contents
 
 - [TLDR](#tldr)
