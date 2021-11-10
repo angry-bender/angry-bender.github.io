@@ -2,12 +2,12 @@
 categories:
   - blog
   - 
-title: PowerShell Cheat Sheet
-subtitle: Handy tips for Powershell I use all the time
-tags: [windows, sysadmin, automation]
+title: DFIR - Final result 1 - Powershell Telemetry by Windows
+subtitle: Documentation on the powershell activity from Microsoft Compatibility Appraiser
+tags: [windows, DFIR]
 comments: false
 header:
-  teaser: /img/ps.jpg
+  teaser: /img/tel.jpg
 ---
 
 ## TLDR
