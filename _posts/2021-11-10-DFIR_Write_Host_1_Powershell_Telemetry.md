@@ -19,14 +19,17 @@ However, CompatTelRunner can be used for persistence, so if your unsure you shou
 
 ## Contents
 
-- [TLDR](#tldr)
-- [Contents](#contents)
-- [Powershell Script Block](#powershell-script-block)
-- [Sysmon Logging](#sysmon-logging)
-- [CompatTelRunner](#compattelrunner)
+- [DFIR Artefacts](#dfir-artefacts)
+  - [Powershell Script Block](#powershell-script-block)
+  - [Sysmon Logging](#sysmon-logging)
+- [Process Information](#process-information)
+  - [CompatTelRunner](#compattelrunner)
 - [Checking for Persistance](#checking-for-persistance)
-- [DLL](#dll)
-- [Assessment](#assessment)
+- [Additional Information](#additional-information)
+  - [DLL](#dll)
+  - [Whats actually happening?](#whats-actually-happening)
+  - [Assessment](#assessment)
+# DFIR Artefacts
 ## Powershell Script Block
 
 When checking your powershell script block commands you might see the following output
@@ -70,6 +73,7 @@ EventData
   ParentCommandLine C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun -cv:f5xHeCd6QkakkzW0.1 
 ```
 
+# Process Information
 ## CompatTelRunner
 
 This process is part of the default Windows10 or 11 installation and some versions of Server 2019. It sends periodic usage and performance data to microsoft. This data appears to be sent to the domain settingsfd-geo.trafficmanager.net by https. So if you didn't want this data being sent to Microsoft, you could choose to disable it at a firewall level.
@@ -82,7 +86,8 @@ This also means you could disable this task if you so wish with `Disable-Schedul
 
 The tasks description is `"Collects program telemetry information if opted-in to the Microsoft Customer Experience Improvement Program."` So, if you Opt out by general sysadmin methods this task should go away. 
 
-## Checking for Persistance
+
+# Checking for Persistance
 
 If you suspect malicious usage of this script, you should check the following registry keys. You can check this with the following powershell command
 
@@ -122,17 +127,24 @@ InvAgent                       Command     : C:\WINDOWS\system32\CompatTelRunner
 
 You should also check that the dll's above have not been modified. Futher documentation on these keys can be found from [Trustedsec](https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence/?utm_content=131234033&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306)
 
-# DLL
+# Additional Information
+## DLL
 
 A quick look at the DLL I have today, shows this an export function in the .text part of the dll.
 
 ![](/img/tel/1.jpg)
 
-This function is undocumented in the MSDN Library. Looking at the offset, we can see a list of all the functions
+This function is undocumented in the MSDN Library.
 
-![](/img/tel/2.jpg)
+## Whats actually happening?
 
+When running `C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun -cv:<string>.1` the following appears to occur
 
+![](/img/tel/3.jpg)
+
+This shows that it is querying items in the registry, The `APPRAISER_TelemetryBaseline_UNV.bin` and StartupProfileData. The PowerShell Activity I observe appears to be related to the `PSScriptPolicyTest_<RandomID>.ps1` which is used to test against Microsoft App locker. I also see some file activity which is written to disk and a few values to registry are updated.
+
+None of the activity appears to drop any files of relevance, and appears to be normal telemetry like activity.
 ## Assessment
 
 Overall, in my opinion this activity is non-malicious, and can safely be ignored, so long as the registry has not been modified.
