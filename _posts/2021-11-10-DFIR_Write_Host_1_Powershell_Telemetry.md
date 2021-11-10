@@ -128,7 +128,10 @@ A quick look at the DLL I have today, shows this an export function in the .text
 
 ![](/img/tel/1.jpg)
 
- This function is undocumented in the MSDN Library.
+This function is undocumented in the MSDN Library. Looking at the offset, we can see a list of all the functions
+
+![](/img/tel/2.jpg)
+
 
 ## Assessment
 
