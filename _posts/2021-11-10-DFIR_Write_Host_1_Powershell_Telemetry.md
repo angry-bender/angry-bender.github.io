@@ -90,7 +90,7 @@ Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
 $TelemetryController | format-list
 ```
 
-As of November 2021, the default value in Windows 11 are
+As of November 2021, the default values in Windows 11 are
 ```
 Name                           Property
 ----                           --------
