@@ -29,6 +29,7 @@ However, CompatTelRunner can be used for persistence, so if your unsure you shou
   - [DLL](#dll)
   - [Whats actually happening?](#whats-actually-happening)
   - [Assessment](#assessment)
+
 # DFIR Artefacts
 ## Powershell Script Block
 
