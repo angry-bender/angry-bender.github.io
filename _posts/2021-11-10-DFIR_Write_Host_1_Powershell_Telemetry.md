@@ -87,7 +87,7 @@ If you suspect malicious usage of this script, you should check the following re
 
 ```
 $TelemetryController = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController" -recurse
-$TelemetryController | format-list
+$TelemetryController | format-table
 ```
 
 As of November 2021, the default values in Windows 11 are
