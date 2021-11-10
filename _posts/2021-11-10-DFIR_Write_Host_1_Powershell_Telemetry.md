@@ -25,6 +25,7 @@ However, CompatTelRunner can be used for persistence, so if your unsure you shou
 - [Sysmon Logging](#sysmon-logging)
 - [CompatTelRunner](#compattelrunner)
 - [Checking for Persistance](#checking-for-persistance)
+- [DLL](#dll)
 - [Assessment](#assessment)
 ## Powershell Script Block
 
@@ -120,6 +121,15 @@ InvAgent                       Command     : C:\WINDOWS\system32\CompatTelRunner
 ```
 
 You should also check that the dll's above have not been modified. Futher documentation on these keys can be found from [Trustedsec](https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence/?utm_content=131234033&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306)
+
+# DLL
+
+A quick look at the DLL I have today, shows this an export function in the .text part of the dll.
+
+![](/img/tel/1.jpg)
+
+ This function is undocumented in the MSDN Library.
+
 ## Assessment
 
 Overall, in my opinion this activity is non-malicious, and can safely be ignored, so long as the registry has not been modified.
