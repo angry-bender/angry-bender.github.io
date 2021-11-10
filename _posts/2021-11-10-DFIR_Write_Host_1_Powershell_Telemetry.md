@@ -86,7 +86,7 @@ The tasks description is `"Collects program telemetry information if opted-in to
 If you suspect malicious usage of this script, you should check the following registry keys. You can check this with the following powershell command
 
 ```
-$TelemetryController = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController"
+$TelemetryController = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController" -recurse
 $TelemetryController | format-list
 ```
 
