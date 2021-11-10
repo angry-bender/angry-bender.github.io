@@ -2,7 +2,7 @@
 categories:
   - blog
   - 
-title: DFIR - Final result 1 - Powershell Telemetry by Windows
+title: DFIR - Final result 1 - Powershell telemetry by Windows
 subtitle: Documentation on the powershell activity from Microsoft Compatibility Appraiser
 tags: [windows, DFIR]
 comments: false
@@ -15,7 +15,7 @@ Heaps of reddit posts and AV posts have discussed this command at length, with g
 
 This activity belongs to the opted in Windows Telemetry done during windows setup for Windows 10/11 & 2019, so long as the output matches that at [Powershell Script Block](#powershell-script-block) and has the parent process of `C:\Windows\System32\CompatTelRunner.exe ` i don't believe it is malicious.
 
-However, this can be used for persistence, so if your unsure you should check the contents of the registry key at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController` or check if the scheduled task has been modified. See more [here](https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence/?utm_content=131234033&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306)
+However, CompatTelRunner can be used for persistence, so if your unsure you should check the contents of the registry key at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController` or check if the scheduled task has been modified. See more at [Checking for Persistance](#checking-for-persistance).
 
 ## Contents
 
@@ -24,8 +24,8 @@ However, this can be used for persistence, so if your unsure you should check th
 - [Powershell Script Block](#powershell-script-block)
 - [Sysmon Logging](#sysmon-logging)
 - [CompatTelRunner](#compattelrunner)
+- [Checking for Persistance](#checking-for-persistance)
 - [Assessment](#assessment)
-
 ## Powershell Script Block
 
 When checking your powershell script block commands you might see the following output
@@ -81,6 +81,49 @@ This also means you could disable this task if you so wish with `Disable-Schedul
 
 The tasks description is `"Collects program telemetry information if opted-in to the Microsoft Customer Experience Improvement Program."` So, if you Opt out by general sysadmin methods this task should go away. 
 
+## Checking for Persistance
+
+If you suspect malicious usage of this script, you should check the following registry keys. You can check this with the following powershell command
+
+```
+Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController"
+$TelemetryController | format-list
+```
+
+As of November 2021, the default value in Windows 11 are
+```
+Name                           Property
+----                           --------
+Appraiser                      Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun
+                               Nightly     : 1
+                               Sku         : 1
+                               Result      : 0
+AppraiserServer                Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:DoScheduledTelemetryRun
+                               Maintenance : 1
+                               Sku         : 2
+AvStatus                       Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:appraiser.dll -f:UpdateAvStatus
+                               Nightly     : 1
+                               Sku         : 1
+                               Result      : 0
+DevInv                         Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:devinv.dll -f:CreateDeviceInventory
+                               Oobe        : 1
+                               Result      : 0
+Encapsulation                  Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:pcasvc.dll -f:QueryEncapsulationSettings
+                               Maintenance : 1
+                               Nightly     : 1
+                               Oobe        : 1
+                               Result      : 0
+InvAgent                       Command     : C:\WINDOWS\system32\CompatTelRunner.exe -m:invagent.dll -f:RunUpdate
+                               Maintenance : 1
+                               Oobe        : 1
+                               Result      : 0
+```
+
+You should also check that the dll's above have not been modified. Futher documentation on these keys can be found from [Trustedsec](https://www.trustedsec.com/blog/abusing-windows-telemetry-for-persistence/?utm_content=131234033&utm_medium=social&utm_source=twitter&hss_channel=tw-403811306)
 ## Assessment
 
-Overall, in my opinion this activity is non-malicious, and can safely be ignored. However, if, in the future, you see non-expected output from this command, this should be further investigated. There could be privacy concerns for you, if this is the case, you should opt out of Windows telemetry.
+Overall, in my opinion this activity is non-malicious, and can safely be ignored, so long as the registry has not been modified.
+
+However, if, in the future, you see non-expected output from this command, this should be further investigated. 
+
+In the case there is privacy concerns for you, or your organisation, you should opt out of Windows telemetry, disable the scheduled task, and monitor the above registry key for changes.
