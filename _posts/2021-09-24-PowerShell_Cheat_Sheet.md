@@ -11,7 +11,6 @@ header:
 ---
 
 ## Introduction
-
 This post aims to consolidate a list of useful smartphone codes
 
 ## Contents

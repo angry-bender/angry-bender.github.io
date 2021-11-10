@@ -8,15 +8,8 @@ comments: false
 header:
   teaser: /img/zt.jpg
 ---
-# Last Updated
-
-15JUL21
-
 # Introduction
-
-*note this post is incomplete, apr 2021, this is quite a large playbook to replicate*
-
-This post aims to replicate my physical playbook on windows. Unlike other playbooks, it is not tool centric, rather it is concept/artefact centric.
+*note this post is incomplete, Oct 2021, this is quite a large playbook to replicate* This post aims to replicate my physical playbook on windows. Unlike other playbooks, it is not tool centric, rather it is concept/artefact centric.
 
 # Scripted Environment Setup
 
@@ -28,7 +21,6 @@ Windows VM - [WINSIFT](https://github.com/angry-bender/forensicssetup)
 
 # Contents
 
-- [Last Updated](#last-updated)
 - [Introduction](#introduction)
 - [Scripted Environment Setup](#scripted-environment-setup)
 - [Contents](#contents)
