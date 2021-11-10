@@ -13,7 +13,7 @@ header:
 ## TLDR
 Heaps of reddit posts and AV posts have discussed this command at length, with general users sometimes stating `powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1'; ` is malicious.
 
-This activity belongs to the opted in Windows Telemetry done during windows setup for Windows 10/11 & 2019, so long as the output matches that at [Powershell Script Block](#powershell-script-block) and has the parent process of `C:\Windows\System32\CompatTelRunner.exe ` i don't believe it is malicious.
+This activity belongs to the opted in Windows telemetry done during windows setup for Windows 10/11 & 2019, so long as the output matches that at [Powershell Script Block](#powershell-script-block) and has the parent process of `C:\Windows\System32\CompatTelRunner.exe ` i don't believe it is malicious.
 
 However, CompatTelRunner can be used for persistence, so if your unsure you should check the contents of the registry key at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController` or check if the scheduled task has been modified. See more at [Checking for Persistance](#checking-for-persistance).
 
