@@ -90,7 +90,7 @@ $TelemetryController = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\Curren
 $TelemetryController | format-table
 ```
 
-As of November 2021, the default values in Windows 11 are
+As of November 2021, the default values in Windows 11 and Windows 10 are
 ```
 Name                           Property
 ----                           --------
