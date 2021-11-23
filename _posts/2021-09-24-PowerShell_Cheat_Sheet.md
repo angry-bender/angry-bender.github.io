@@ -37,4 +37,19 @@ Name1 | Name2
 Value1 | Value2
 Value3 | Value4
 
+## Getting FilePath and Parents for a tile type (For bulk collections)
+```PowerShell
+$SourceDir = C:\
+$FileDir = Get-ChildItem -Recurse -Path $SRUMDir -Filter '<FileSearchingFor>'
+
+foreach ($dir in $FileDir){
+  $ParentDirectory = (Get-Item FileDir.Directory).parent.FullName
+  #You would do something with the file here, in this case I'll use a write-host
+  Write-Host "Doing something with $dir.FullName
+ }
+
+
+
+
+
 [*Back to table of contents*](#contents)
