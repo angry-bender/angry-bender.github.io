@@ -11,7 +11,7 @@ header:
 ---
 
 ## Introduction
-This post aims to consolidate a list of useful smartphone codes
+Script blocks i find myself using in powershell all the time
 
 ## Contents
 
