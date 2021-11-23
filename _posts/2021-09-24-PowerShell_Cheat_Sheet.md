@@ -49,7 +49,7 @@ SourceDir is where your colleciton of files are stored
 
 FileDir is the file you might want to search for, for example Security.evtx
 
-$ParentDirectory is for if you want to the parent directory to process other files there, for example, if security.evtx exists, go up and get something else. You could also change this is he the computername were in several parent directories above with `ComputerName = (Get-Item FileDir.Directory).parent.parent.parent.parent.Name`
+ParentDirectory is for if you want to the parent directory to process other files there, for example, if security.evtx exists, go up and get something else. You could also change this is he the computername were in several parent directories above with `ComputerName = (Get-Item FileDir.Directory).parent.parent.parent.parent.Name`
 
 ```PowerShell
 $SourceDir = C:\
