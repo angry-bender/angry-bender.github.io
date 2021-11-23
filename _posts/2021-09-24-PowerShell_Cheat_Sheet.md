@@ -43,10 +43,17 @@ Value3 | Value4
 
 ## Getting FilePath and parents for a file type
 
-This can be used for bulk computer collections and processing with other tools.
+This can be used for bulk computer collections and processing with other tools. 
+
+SourceDir is where your colleciton of files are stored
+
+FileDir is the file you might want to search for, for example Security.evtx
+
+$ParentDirectory is for if you want to the parent directory to process other files there, for example, if security.evtx exists, go up and get something else. You could also change this is he the computername were in several parent directories above with `ComputerName = (Get-Item FileDir.Directory).parent.parent.parent.parent.Name`
+
 ```PowerShell
 $SourceDir = C:\
-$FileDir = Get-ChildItem -Recurse -Path $SRUMDir -Filter '<FileSearchingFor>'
+$FileDir = Get-ChildItem -Recurse -Path $SourceDir -Filter '<FileSearchingFor>'
 
 foreach ($dir in $FileDir){
   $ParentDirectory = (Get-Item FileDir.Directory).parent.FullName
