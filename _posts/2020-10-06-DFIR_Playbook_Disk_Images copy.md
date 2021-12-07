@@ -28,6 +28,7 @@ This post aims to replicate my physical playbook on Disk Images and includes the
   - [Quick Registry analysis](#quick-registry-analysis)
   - [Hash all files, including unallocated with find on a live linux system](#hash-all-files-including-unallocated-with-find-on-a-live-linux-system)
   - [Get the the offset of a files physical location on disk](#Get-the-physical-location-of-a-file-on-disk)
+- [Mounting from a raw image](#Mounting-from-a-raw-image)
 
 ## Overview
 
@@ -101,3 +102,79 @@ Command | Description
 -`filefrag -v <filename>`
 
 [*Back to table of contents*](#contents))
+
+# Mounting from a raw image
+
+### Pre-Requisites
+
+Install the following packages if you are not mounting a ext4 based image
+
+`sudo apt-get install fusermount xmount afflib-tools ewf-tools  qemu-utils libbde-utils libvshadow-utils`
+
+### Instructions
+
+You can mount from a raw image by confucting the following
+
+`fdisk -l <filename>`
+
+This will show an output like this for an ext4 based filesystem
+
+```
+Disk ./file: 64 GiB, 68719477248 bytes, 134217729 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x000bbd9c
+
+Device        Boot Start       End   Sectors Size Id Type
+./filep1 *     2048 134217727 134215680  64G 83 Linux
+```
+
+Then, make a directory to mount
+
+`sudo mkdir /mnt/raw`
+
+Use the output above, where the Start point is (2048) and multiply by 512 to get the offset
+
+`echo $((512 * 2048))`
+
+Which should give 
+
+```
+echo $((512 * 2048))
+1048576
+```
+
+Use this offset to mount readonly NOTE: you can use the -t option to specify non EXT4 type systems like ntfs or fat
+
+`sudo mount -o ro,loop,offset=1048576 <filename> /mnt/raw/`
+
+if you get the following error:
+
+```
+mount: /mnt/raw: cannot mount /dev/loop read-only.
+```
+
+Add the `noload` option, this allows you to mount a dirty journal, and prevents changing any data in anyway.
+
+`sudo mount -o ro,noload,loop,offset=1048576 <filename> /mnt/raw/`
+
+From the man page
+```
+           Note that, depending on the filesystem type, state and kernel
+           behavior, the system may still write to the device. For
+           example, ext3 and ext4 will replay the journal if the
+           filesystem is dirty. To prevent this kind of write access,
+           you may want to mount an ext3 or ext4 filesystem with the
+           ro,noload mount options or set the block device itself to
+           read-only mode, see the blockdev(8) command.
+```
+
+See https://www.sans.org/blog/how-to-mount-dirty-ext4-file-systems/ for further info
+
+
+[*Back to table of contents*](#contents))
+
+
+
