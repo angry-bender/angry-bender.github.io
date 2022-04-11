@@ -9,6 +9,10 @@ header:
   teaser: /img/vmv/disk.jpg
 ---
 
+# Update - 2022/04
+
+There appears to be a VMDK option now in mmls, before attempting the below try `mmls -i vmdk sample.vmdk` or `mmls -i list`
+
 # Introduction
 How to convert vmdk's that might be compressed when you get the error
 ```bash
