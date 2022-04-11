@@ -14,7 +14,7 @@ How to convert vmdk's that might be compressed when you get the error
 ```bash
 abender@sift:~$ mmls sample.vmdk
 Cannot determine partition type
-abender@sift:~$ mmls -afflib sample.vmdk
+abender@sift:~$ mmls -i aff sample.vmdk
 Cannot determine partition type
 ```
 
@@ -43,7 +43,7 @@ abender@sift:~$
 ```bash
 abender@sift:~$ mmls sample.vmdk
 Cannot determine partition type
-abender@sift:~$ mmls -afflib sample.vmdk
+abender@sift:~$ mmls -i aff sample.vmdk
 DOS Partition Table
 Offset Sector: 0
 Units are in 512-byte sectors
