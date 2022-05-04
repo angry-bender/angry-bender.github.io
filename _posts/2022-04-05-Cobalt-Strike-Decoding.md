@@ -6,7 +6,7 @@ subtitle: Quick wins on cobalt strike config.
 tags: [Malware, Windows, DFIR]
 comments: true
 header:
-  teaser: /img/lt/tux.jpg
+  teaser: /img/cs.png
 ---
 
 # Introduction
