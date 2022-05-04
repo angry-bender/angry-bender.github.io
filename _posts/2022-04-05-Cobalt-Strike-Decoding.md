@@ -1,7 +1,7 @@
 ---
 categories:
   - blog
-title: Cobaly Strike Decoding
+title: Cobalt Strike Decoding
 subtitle: Quick wins on cobalt strike config.
 tags: [Malware, Windows, DFIR]
 comments: true
