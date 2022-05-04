@@ -22,7 +22,7 @@ The below Sophos post does such a great job at explaining the process.
 
 ## TLDR Quick Winds
 
-Check your base64 against this cheatsheet ![base64 cheatsheet](https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639)
+Check your base64 against this cheatsheet [base64 cheatsheet](https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639)
 
 Some beacons like to use a %COMSPEC% service with encoded powershell that looks something like 
 `%COMSPEC% /b /c start /b /min powershell -nop -w hidden -encodedcommand <Base64Here>`
