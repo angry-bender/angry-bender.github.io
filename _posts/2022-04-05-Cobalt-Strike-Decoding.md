@@ -10,13 +10,14 @@ header:
 ---
 
 # Introduction
+
 This post aims to quicky bring together some resources for quick wins to get cobalt beacons.
 
 ## Not reinventing the wheel
 
 The below Sophos post does such a great job at explaining the process. 
 
-![sophos](https://community.sophos.com/sophos-labs/b/blog/posts/decoding-malicious-powershell)
+![Sophos - Decoding malicious powershell](https://community.sophos.com/sophos-labs/b/blog/posts/decoding-malicious-powershell)
 
 
 ## TLDR Quick Winds
