@@ -33,7 +33,7 @@ Plugging this into cyberchef with the following recipie should show the next sta
 In the case there is some more obfuscation here, and it is compressed try the following recipie
 ![Recipe2](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)Gunzip())
 
-Now you should see the config with a `$DoIt = @` at the top after Set-StrictMode version 2
+Now you should see the config with a `$DoIt = @` at the top after `Set-StrictMode version 2`
 
 Scrolling down, you may see `[Byte[]]$var_code = <another base64 string>`
 
