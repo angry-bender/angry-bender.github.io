@@ -15,7 +15,7 @@ We all know DFIR loves spreadsheets for timelines, but copying out times, dates 
 
 ## Date wont convert when doing formulas, or sort not working
 
-`=TEXT(A2,"YYYY-MM-DDTHH:MM:SS")`
+`=TEXT(A1,"YYYY-MM-DDTHH:MM:SS")`
 
 ## Convert from ISODate (ISO 8601) to DATE 
 
@@ -27,4 +27,4 @@ We all know DFIR loves spreadsheets for timelines, but copying out times, dates 
 
 ## Change timezone
 
-`=MOD(A2+(<Zone Offset>/24),1)`
+`=MOD(A1+(<Zone Offset>/24),1)`
