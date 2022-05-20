@@ -54,6 +54,8 @@ Windows VM - [WINSIFT](https://github.com/angry-bender/forensicssetup)
     - [Shellbags](#shellbags)
     - [Shimcache](#shimcache)
     - [Windows 10 Notifications](#windows-10-notifications)
+  - [Network Activity](#Network-Activity)
+    - [Last IP Address](#last-ip-address)
 
 # Fundamentals
 
@@ -349,3 +351,9 @@ Location %Userproile%\AppData\Local\Microsoft\Windows\Notifications
 This location is stored as an Sqlite database, you will need to use Sqlitebrowser to decode it.
 
 Microsoft also stores information about notifications in the following registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications
+  
+# Network Activity
+
+## Last IP Address
+
+Listed under `HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Prameters\Interfaces`
