@@ -358,6 +358,9 @@ Say you have a series of text files you'd like to manipulate that are named 0000
     fi
   done
  ```
+ 
+[*Back to table of contents*](#)
+
 
 # Basic Forensics Commands
 
