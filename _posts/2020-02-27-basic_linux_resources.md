@@ -344,7 +344,7 @@ Command | Description
 
 [*Back to table of contents*](#)
   
-## Working with sequential file
+## Working with Sequential Files in Bash
   
 Say you have a series of text files you'd like to manipulate that are named 00001.txt, 00010.txt and 00018.txt, you can use the following logic to test and manipulate those files
 
