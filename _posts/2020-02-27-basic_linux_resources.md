@@ -10,6 +10,7 @@ header:
 ---
 # Last Update
 15APR21 - Added filefrag command
+16JAN23 - Added Sequential Numbering
 
 # Introduction
 These resources Have been provided for a  Linux course I have had to instruct. It contains a command cheat sheet & posts that will help basic analysts be able use and research how to use Linux.
@@ -341,6 +342,21 @@ Command | Description
 `su - <username>` | switch to a new user and use their shell environment
 
 [*Back to table of contents*](#)
+  
+## Working with sequential file
+  
+Say you have a series of text files you'd like to manipulate that are named 00001.txt, 00010.txt and 00018.txt, you can use the following logic to test and manipulate those files
+
+```
+  for n in {00000..50}; do
+    file="$($pwd)/${n}.txt"
+    # Test if the file exists
+    if test -f "$file"; then
+       # Here is where you can manipulate those files
+       echo "found file" > $file
+    fi
+  done
+ ```
 
 # Basic Forensics Commands
 
