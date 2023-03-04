@@ -34,10 +34,13 @@ We all know DFIR loves spreadsheets for timelines, but copying out times, dates 
 
 ## Lookup Value from another CSV/XLSX
 `=XLOOKUP(A1,['sheet2.xlsx]!$B:$B,['sheet2.xlsx]!$C:$C,"Not in Sheet2")`
-Where 
-A1 = Lookup Cell
-Sheet2.xlsx = XLSX to search
-$B = Column to query
-$C = Column to return
 
+### Values Defintion
 
+Value | Description
+-------|--------
+`A1`	| Lookup Cell
+`Sheet2.xlsx`	| XLSX to search
+`$B` | Column to query
+`$C` | Column to return
+ 
