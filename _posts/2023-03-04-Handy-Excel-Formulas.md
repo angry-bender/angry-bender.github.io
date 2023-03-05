@@ -27,7 +27,7 @@ We all know DFIR loves spreadsheets for timelines, but copying out times, dates 
 
 ## Change timezone
 
-`=MOD(A1+(<Zone Offset>/24),1)`
+`=A1+TIME(<TZ>,0,0)`
 
 ## Join two columns together with spaces between
 `=CONCAT(A1," "A2).`
