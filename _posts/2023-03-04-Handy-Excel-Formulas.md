@@ -43,4 +43,17 @@ Value | Description
 `Sheet2.xlsx`	| XLSX to search
 `$B` | Column to query
 `$C` | Column to return
+
+## Min and Max date lookups based on a given field
+
+Earliest Date
+
+`=MIN(FILTER(<DateArray>,<LookupArray>=<CellToLookUp>))`
+
+Latest Date
+
+`=MAX(FILTER(<DateArray>,<LookupArray>=<CellToLookUp>))`
+
+*Note: you must have all the date types as text for this to work*
+
  
