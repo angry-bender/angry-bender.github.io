@@ -44,7 +44,7 @@ Value | Description
 `$B` | Column to query
 `$C` | Column to return
 
-## Min and Max date lookups based on a given field
+## Min and Max date lookups based on a given field (Using M365/Excel 2019+)
 
 Earliest Date
 
