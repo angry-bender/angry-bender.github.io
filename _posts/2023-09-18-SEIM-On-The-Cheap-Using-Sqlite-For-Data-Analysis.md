@@ -17,7 +17,7 @@ When doing investigations, its quite common to need to read large amounts of dat
 
 While SQLite is not the most powerful language for running these queries, it can be helpful to quickly sort down large amounts of data into something more useable. 
 
-Using this approach, we can potentially perform some forms of data transformation where available (DB Browser for Sqlite can support JSON and XML Data Types). Additionally, many DFIR Practitioners will already have DB Browser for SQLite or Sqlite installed in their analysis environment, as it is often used for common forensics artifacts like internet history
+Using this approach, we can potentially perform some forms of data transformation where there is an available [datatype](https://www.sqlite.org/datatype3.html). Additionally, many DFIR Practitioners will already have DB Browser for SQLite or Sqlite installed in their analysis environment, as it is often used for common forensics artifacts like internet history
 
 
 # Pre-Requisites
