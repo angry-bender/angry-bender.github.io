@@ -1,16 +1,16 @@
 ---
 categories:
   - blog
-title: A SEIM On the Cheap - Using Sqlite for Data Analysis
+title: A SIEM On the Cheap - Using Sqlite for Data Analysis
 subtitle: Converting CSV Files into Sqlite
-tags: [CSV, Logs, SEIM, Timeline, DFIR]
+tags: [CSV, Logs, SIEM, Timeline, DFIR]
 comments: true
 header:
   teaser: /img/sqlite.png
 ---
 
 # Introduction
-When doing investigations, its quite common to need to read large amounts of data, usually contained in CSV Files. While there are many solutions out there for reading these files, the more I have used SEIM's for searching, the more i have found myself craving a SQL Approach to analysing this data.
+When doing investigations, its quite common to need to read large amounts of data, usually contained in CSV Files. While there are many solutions out there for reading these files, the more I have used SIEM's for searching, the more i have found myself craving a SQL Approach to analysing this data.
 
 
 While SQLite is not the most powerful language for running these queries, it can be helpful to quickly sort down large amounts of data into something more useable. 
