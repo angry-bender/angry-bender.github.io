@@ -15,10 +15,12 @@ header:
 When doing investigations, its quite common to need to read large amounts of data, usually contained in CSV Files. While there are many solutions out there for reading these files, the more I have used SEIM's for searching, the more i have found myself craving a SQL Approach to analysing this data.
 
 
-While SQLite is not the most powerful language for running these queries, it can be helpful to quickly sort down large amounts of data into something more useable. Plus using this approach, we can potentially perform some forms of data transfer where available. Additionally, many DFIR Practitioners will already have DB Browser for SQLite or Sqlite installed in their analysis environment, as it is often used for common forensics artefacts like internet history
+While SQLite is not the most powerful language for running these queries, it can be helpful to quickly sort down large amounts of data into something more useable. 
+
+Using this approach, we can potentially perform some forms of data transformation where available (DB Browser for Sqlite can support JSON and XML Data Types). Additionally, many DFIR Practitioners will already have DB Browser for SQLite or Sqlite installed in their analysis environment, as it is often used for common forensics artifacts like internet history
 
 
-# Pre-Requisities
+# Pre-Requisites
 
 1. Sqlite installed for either windows, or in WSL
 2. [DB Browser for SQLite](https://sqlitebrowser.org/dl/)
@@ -46,7 +48,7 @@ From there use the following commands:
 
 `.import '<Full Path Name>' <TableName>`
 
-One imported exit using  `CTRL+Z and <Enter>` for windoww, and `CTRL+D and <ENTER>` for Linux
+One imported exit using  `CTRL+Z and <Enter>` for windows, and `CTRL+D and <ENTER>` for Linux
 
 ![import](/img/sql/import.png)
 
@@ -66,7 +68,7 @@ Or, you can use the **Execute SQL** tab to execute more advanced commands
 
 My approach to using BDBrowser for SQLite is I use the **Browse Data** tab to view the columns, from there I move to the **Execute SQL** tab to do more advanced queries.
 
-Below are some small examples of the types of analysis we can do, as well as an explination of basic SQL structure
+Below are some small examples of the types of analysis we can do, as well as an explanation of basic SQL structure
 
 `SELECT <Column Name> FROM <TABLE>` - `*` selects all columns, or you can specify the column names, the table name is as set when importing the table
 
@@ -76,7 +78,7 @@ Below are some small examples of the types of analysis we can do, as well as an 
 
 ![ExecuteSQL](/img/sql/where.png)
 
-`ORDER BY <Column Name> <ASC/DESC>` - Useful for sorting timestamps by Acending or Descending Value
+`ORDER BY <Column Name> <ASC/DESC>` - Useful for sorting timestamps by ascending or descending Value
 
 ![ExecuteSQL](/img/sql/order.png)
 
