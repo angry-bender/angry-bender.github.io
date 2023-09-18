@@ -10,7 +10,6 @@ header:
 ---
 
 # Introduction
-
 This post aims to bring together some resources for quick wins to get cobalt beacons.
 
 ## Not reinventing the wheel

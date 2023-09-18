@@ -10,7 +10,6 @@ header:
 ---
 
 # Introduction
-
 We all know DFIR loves spreadsheets for timelines, but copying out times, dates and converting data types can be a pain. This post aims to show the formulas I commonly use in excel to help this out
 
 ## Date wont convert when doing formulas, or sort not working

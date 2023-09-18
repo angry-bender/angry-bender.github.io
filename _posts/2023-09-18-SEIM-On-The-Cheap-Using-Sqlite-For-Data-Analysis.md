@@ -10,8 +10,6 @@ header:
 ---
 
 # Introduction
-
-
 When doing investigations, its quite common to need to read large amounts of data, usually contained in CSV Files. While there are many solutions out there for reading these files, the more I have used SEIM's for searching, the more i have found myself craving a SQL Approach to analysing this data.
 
 
