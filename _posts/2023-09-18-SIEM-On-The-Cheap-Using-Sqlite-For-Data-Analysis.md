@@ -72,7 +72,7 @@ Below are some small examples of the types of analysis we can do, as well as an 
 
 ![ExecuteSQL](/img/sql/select.png)
 
-`WHERE <Column Name> <Conditon> <Search Syntax>` - A condition to match on or search for, As CSV defaults to a datatype of strings, we can use the LIKE condition to search for text with `%` used as a wildcard
+`WHERE <Column Name> <Conditon> <Search Syntax>` - A condition to match on or search for, As CSV defaults to a datatype of strings, we can use the LIKE condition to search for text with `%` used as a wildcard. Multiple LIKE values can be used with `IN ("A","B","C")` as the <condition> 
 
 ![ExecuteSQL](/img/sql/where.png)
 
@@ -83,3 +83,4 @@ Below are some small examples of the types of analysis we can do, as well as an 
 `Group By <Column Name>` - Groups by one or more colum names, will group on unique values, more useful when using a function like count
 
 ![ExecuteSQL](/img/sql/group.png)
+
