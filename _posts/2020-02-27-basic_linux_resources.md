@@ -13,6 +13,9 @@ header:
 
 16JAN23 - Added Sequential Numbering
 
+20JUN24 - Added useful forensic commands
+
+
 # Introduction
 These resources Have been provided for a  Linux course I have had to instruct. It contains a command cheat sheet & posts that will help basic analysts be able use and research how to use Linux.
 
