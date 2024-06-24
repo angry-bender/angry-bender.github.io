@@ -367,6 +367,11 @@ Say you have a series of text files you'd like to manipulate that are named 0000
 Command | Description
 -------|-------
 `filefrag -v <filename>` | Gives you the offset of where a file is physically on disk
+`ls -alh --time=birth --full-time` | Can be handy to show full birth times of a file
+`ls -alh --full-time` | Can be handy to show the full modified time of a file
+`ls -alhi` | Shows inode number of a file
+`stat` | full timestamps of a given file
+`find -type f -name "<targetname>" -exec md5sum {} \;` | Find a specific file name and then exec a file hash or another command
 
 # Set a forensics alias.... to you know, forensicate
 
